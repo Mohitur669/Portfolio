@@ -1,3 +1,5 @@
+// hamberger menu
+
 var menu = document.querySelector(".menu");
 var menuBtn = document.querySelector(".menu-btn");
 var closeBtn = document.querySelector(".close-btn");
@@ -9,4 +11,3 @@ menuBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
     menu.classList.remove('active');
 });
-
