@@ -234,7 +234,7 @@ button.neutral:hover a {
 .info-left {
     position: absolute;
     top: 10%;
-    left: -15%;
+    left: -5%;
 }
 
 .info-left-content {
@@ -253,7 +253,7 @@ button.neutral:hover a {
 
 .info-right {
     position: absolute;
-    top: 70%;
+    top: 75%;
     right: -10%
 }
 
