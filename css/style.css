@@ -671,12 +671,13 @@ ul.meta li i {
 
     /* custom */
     .hero h1 {
-        font-size: 40px;
+        font-size: 30px;
         margin-top: -9px;
     }
 
     .hero h3 {
-        margin-top: -26px;
+        font-size: 18px;
+        margin-top: -24px;
     }
 }
 
