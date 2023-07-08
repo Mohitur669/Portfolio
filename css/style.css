@@ -295,6 +295,10 @@ button.neutral:hover a {
     border: 1px solid #FFF1E7;
 }
 
+.desc {
+    text-align: center;
+}
+
 .icon-one {
     color: var(--base-color);
     font-size: 60px;
@@ -687,4 +691,3 @@ ul.meta li i {
     font-weight: 400;
     font-size: 22px;
 }
-
