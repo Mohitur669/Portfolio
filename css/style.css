@@ -370,6 +370,10 @@ button.service3:hover {
 }
 
 /* skills section */
+.stack{
+    margin-top: 60px;
+}
+
 .progress-box {
     margin: 10px;
     height: 40px;
