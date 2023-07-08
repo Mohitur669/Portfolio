@@ -370,6 +370,15 @@ button.service3:hover {
 }
 
 /* skills section */
+.tech{
+    text-align: center;
+    justify-content: center;
+}
+
+.tech a+a {
+    margin-left: 5px;
+}
+
 .stack{
     margin-top: 60px;
 }
