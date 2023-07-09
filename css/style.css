@@ -455,6 +455,10 @@ button.service3:hover {
     transition: all .6ms ease-out;
 }
 
+.post-card button {
+    margin-left: 25%;
+}
+
 .post-card:hover {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
@@ -488,18 +492,18 @@ button.service3:hover {
     cursor: pointer;
 }
 
-.blog-card-info p{
+.blog-card-info p {
     text-align: justify;
 }
 
-ul.meta{
+ul.meta {
     display: flex;
     flex-direction: row;
     gap: 10px;
     justify-content: left;
 }
 
-ul.meta li span{
+ul.meta li span {
     font-size: 17px;
 }
 
@@ -632,4 +636,67 @@ ul.meta li i {
     font-family: 'Satisfy', cursive;
     font-weight: 400;
     font-size: 22px;
+}
+
+
+/* blog */
+.contact-left {
+    flex-basis: 35%;
+}
+
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-left i {
+    color: var(--base-color);
+    font-size: 25px;
+}
+
+.contact-left span {
+    font-size: 19px;
+    margin-left: 10px;
+}
+
+.contact-left button {
+    margin-top: 46px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    font-size: 30px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: transform 05s;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 1px solid var(--base-color);
+    outline: none;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.cdetails {
+    margin-top: 20px;
+}
+
+footer p {
+    text-align: center;
+    width: 100%;
+    padding: 25px 0;
+    font-weight: 500;
+    margin-top: 20px;
+    background-color: #FFF1E7;
 }
