@@ -593,18 +593,18 @@
 
                 </div>
 
-
                 <div class="contact-right">
+                    <!-- using sheetdb free api:  https://sheetdb.io/app/apis?search=&sortField=created_at&sortDirection=desc -->
+                    <form action="https://sheetdb.io/api/v1/7jkst3r59mo7i" method="post" id="sheetdb-form">
+                        <input type="text" name="data[Name]" placeholder="Your Name" required>
 
-                    <form action="">
-                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="data[Email]" placeholder="Your Email">
 
-                        <input type="email" name="Email" placeholder="Your Email">
-
-                        <input class="message" name="Message" rows="6" placeholder="Your Message" required>
+                        <input class="message" name="data[Message]" rows="6" placeholder="Your Message" required>
                         <button class="active" type="submit"><a class="neutral" href="">Submit</a></button>
-                    </form>
 
+                        <p id="msg"></p>
+                    </form>
                 </div>
 
             </div>
