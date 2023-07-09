@@ -11,3 +11,21 @@ menuBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
     menu.classList.remove('active');
 });
+
+
+// form to google sheet
+var form = document.getElementById('sheetdb-form');
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form"),)
+    }).then(
+        response => response.json(),
+        msg.innerHTML = "Message sent successfully!",
+        setTimeout(function () {
+            msg.innerHTML = "";
+        }, 1000),
+        form.reset(),
+    )
+});
