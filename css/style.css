@@ -413,7 +413,7 @@ button.service3:hover {
     bottom: -50%;
     padding: 0 20px;
     color: var(--white);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 
@@ -432,6 +432,7 @@ button.service3:hover {
 
 .pitem:hover .ptext {
     bottom: 20%;
+    align-items: center;
 }
 
 .pbutton {
@@ -485,6 +486,17 @@ button.service3:hover {
     font-size: var(--h3-size);
     line-height: 36px;
     cursor: pointer;
+}
+
+ul.meta{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: left;
+}
+
+ul.meta li span{
+    font-size: 17px;
 }
 
 ul.meta li i {
