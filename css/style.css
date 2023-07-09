@@ -488,10 +488,14 @@ button.service3:hover {
     cursor: pointer;
 }
 
+.blog-card-info p{
+    text-align: justify;
+}
+
 ul.meta{
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 10px;
     justify-content: left;
 }
 
