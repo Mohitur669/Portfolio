@@ -462,7 +462,7 @@ button.service3:hover {
 }
 
 .post-card button {
-    margin-left: 25%;
+    margin-left: 23%;
 }
 
 .post-card:hover {
@@ -719,6 +719,62 @@ footer p {
     font-size: 22px;
 }
 
-#plist .post-content{
+#plist .post-content {
     border: 1px dashed var(--base-color);
+}
+
+
+/* remaining media queries */
+@media only screen and (max-width:414px) {
+    .info-left-content {
+        font-size: 13px;
+    }
+
+    .info-left {
+        top: -5%;
+        left: -16%;
+    }
+
+    .info-right-content {
+        font-size: 13px;
+    }
+
+    .info-right {
+        top: 87%;
+        right: -16%;
+    }
+
+    .about-info h2 {
+        text-align: center;
+    }
+
+    .section-header {
+        margin-top: -70px;
+    }
+
+    #tech {
+        margin-top: 120px;
+    }
+
+    .blog-card-info button {
+        margin-left: 19%;
+    }
+
+    .blog-btn {
+        margin-left: 23% !important;
+    }
+
+    .contact-left {
+        text-align: center;
+        justify-content: center;
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .contact-right {
+        text-align: center;
+        justify-content: center;
+        flex-basis: auto;
+        width: 100%;
+    }
 }
