@@ -37,6 +37,12 @@ body {
     color: var(--body-color)
 }
 
+/* adding text-selection color */
+::selection {
+    background-color: var(--base-color);
+    color: var(--white);
+}
+
 h1,
 h2,
 h3 {
@@ -659,7 +665,7 @@ ul.meta li i {
 }
 
 .contact-left button {
-    margin-top: 46px;
+    margin-top: 25px;
 }
 
 .social-icons {
