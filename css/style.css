@@ -714,3 +714,18 @@ footer p {
         width: 100%;
     }
 }
+
+
+/* submit button */
+.submit {
+    background-color: var(--base-color);
+    color: White;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: var(--white);
+    color: var(--base-color);
+    border: 1px solid var(--base-color);
+    transition: var(--transition);
+}
