@@ -21,8 +21,12 @@ form.addEventListener("submit", e => {
         method: "POST",
         body: new FormData(document.getElementById("sheetdb-form"),)
     }).then(
-        response => response.json()
-    ).then(
+        response => response.json(),
+        msg.innerHTML = "Message sent successfully!",
+        setTimeout(function () {
+            msg.innerHTML = "";
+        }, 1000),
+        form.reset(),
         msg.innerHTML = "Message sent successfully!"
     )
 });
