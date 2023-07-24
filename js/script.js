@@ -22,11 +22,10 @@ form.addEventListener("submit", e => {
         body: new FormData(document.getElementById("sheetdb-form"),)
     }).then(
         response => response.json(),
-        msg.innerHTML = "Message sent successfully!",
+        msg.textContent = "Message sent successfully!",
         setTimeout(function () {
-            msg.innerHTML = "";
+            msg.textContent = "";
         }, 1000),
-        form.reset(),
-        msg.innerHTML = "Message sent successfully!"
+        form.reset()
     )
 });
