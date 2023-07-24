@@ -177,6 +177,7 @@ h3 {
 .cta {
     display: flex;
     align-items: center;
+    justify-content: left;
     gap: 20px;
 }
 
@@ -561,6 +562,10 @@ ul.meta li i {
         width: 100%;
     }
 
+    .cta {
+        justify-content: center;
+    }
+
     /* custom */
     .hero h1 {
         font-size: 30px;
@@ -675,6 +680,10 @@ footer p {
         font-size: 13px;
     }
 
+    .cta {
+        justify-content: center;
+    }
+
     .info-right {
         top: 87%;
         right: -16%;
@@ -726,6 +735,19 @@ footer p {
 .submit:hover {
     background-color: var(--white);
     color: var(--base-color);
+    border: 1px solid var(--base-color);
+    transition: var(--transition);
+}
+
+#talk {
+    background-color: var(--white);
+    color: var(--base-color);
+    cursor: pointer;
+}
+
+#talk:hover {
+    background-color: var(--base-color);
+    color: var(--white);
     border: 1px solid var(--base-color);
     transition: var(--transition);
 }
