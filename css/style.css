@@ -743,6 +743,7 @@ footer p {
     background-color: var(--white);
     color: var(--base-color);
     cursor: pointer;
+    border: 1px solid var(--base-color);
 }
 
 #talk:hover {
