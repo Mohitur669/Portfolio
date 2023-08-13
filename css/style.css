@@ -752,3 +752,7 @@ footer p {
     border: 1px solid var(--base-color);
     transition: var(--transition);
 }
+
+.top-social i{
+    color: var(--base-color);
+}
