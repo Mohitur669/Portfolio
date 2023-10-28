@@ -29,3 +29,22 @@ form.addEventListener("submit", e => {
         form.reset()
     )
 });
+
+// Creating typewriter effect on the name
+let title = document.querySelector(".username")
+let my_name = "Mohd Mohitur Rahaman"
+let index = 1
+
+const typeWriter = () => {
+    let new_title = my_name.slice(0, index)
+    title.innerText = new_title
+
+    // creating infinite loop
+    index > my_name.length ? index = 1 : index++
+
+    setTimeout(() => {
+        typeWriter()
+    }, 140);
+}
+
+typeWriter()
