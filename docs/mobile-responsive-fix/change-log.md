@@ -134,3 +134,23 @@
     - 404 Route: **PASS (DIFF 0.0000%)**
     - Styleguide Route: **PASS (DIFF 0.0043%)**
     - Overall: **100% PASSED**.
+
+
+---
+
+### Update: Mobile Header Dark Mode Toggle & Brand Name One-Liner
+
+- **Issue Addressed**:
+  - Top bar on mobile had 3 control buttons crowding the user's name, causing "Mohd Mohitur Rahaman" to wrap into 2 lines on small screens.
+  - The dark mode toggle button needed to be moved into the mobile hamburger menu so the top navigation remains spacious and uncluttered.
+
+- **Changes Applied**:
+  - `src/App.tsx`:
+    - Header theme button scoped to desktop only (`hidden md:flex`), preserving desktop layout pixel-identically.
+    - Added dedicated theme toggle row inside the mobile hamburger menu dropdown (`min-h-[44px]`), displaying the active Sun/Moon icon, label, and "Dark" / "Light" badge.
+    - Set the top header brand link and name to `min-w-0 shrink whitespace-nowrap text-sm sm:text-base md:text-lg truncate`, guaranteeing the full name stays on a single line ("one-liner") on all mobile devices (320px–430px) without line wraps.
+
+- **Verification**:
+  - Mobile viewports (320px, 360px, 375px, 390px): Name height = 20px (single line confirmed).
+  - Theme toggle functionality verified inside mobile hamburger menu.
+  - Desktop regression test passed 100% across all viewports and states.

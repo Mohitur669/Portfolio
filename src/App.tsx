@@ -95,7 +95,7 @@ export const App: React.FC = () => {
       {/* Top Navigation */}
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-slate-50/80 dark:bg-obsidian-950/80 border-b border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2.5 group font-display font-extrabold text-lg tracking-tight">
+          <a href="#home" className="flex items-center gap-2.5 group font-display font-extrabold text-lg tracking-tight min-w-0 shrink">
             <div className="relative w-8 h-8 rounded-full overflow-hidden border border-slate-300 dark:border-white/20 bg-slate-200 dark:bg-slate-800 shadow-sm transition-transform duration-200 group-hover:scale-105 shrink-0">
               <img
                 src="img/memoji.webp"
@@ -105,7 +105,9 @@ export const App: React.FC = () => {
                 height={32}
               />
             </div>
-            <span className="text-slate-900 dark:text-white font-display font-extrabold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{OWNER_DATA.name}</span>
+            <span className="text-slate-900 dark:text-white font-display font-extrabold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors whitespace-nowrap text-sm sm:text-base md:text-lg truncate">
+              {OWNER_DATA.name}
+            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -134,7 +136,7 @@ export const App: React.FC = () => {
               onClick={toggleTheme}
               title="Toggle color theme"
               aria-label="Toggle theme"
-              className="p-2.5 md:p-2 min-w-[44px] md:min-w-0 min-h-[44px] md:min-h-0 flex items-center justify-center rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:border-cyan-500 transition-colors"
+              className="hidden md:flex p-2 items-center justify-center rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:border-cyan-500 transition-colors"
             >
               {resolvedTheme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-500" />}
             </button>
@@ -206,6 +208,25 @@ export const App: React.FC = () => {
             >
               Contact
             </a>
+
+            {/* Theme Toggle in Mobile Menu */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="w-full flex items-center justify-between min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium transition-colors"
+            >
+              <span className="flex items-center gap-2.5">
+                {resolvedTheme === 'dark' ? (
+                  <Sun className="w-4 h-4 text-amber-400" />
+                ) : (
+                  <Moon className="w-4 h-4 text-indigo-500" />
+                )}
+                <span>Theme</span>
+              </span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+                {resolvedTheme === 'dark' ? 'Dark' : 'Light'}
+              </span>
+            </button>
             <div className="pt-2 border-t border-slate-200 dark:border-white/10">
               <a
                 href={OWNER_DATA.resumePath}
