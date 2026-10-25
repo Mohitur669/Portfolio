@@ -80,7 +80,7 @@ export const Projects: React.FC = () => {
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md overflow-x-auto max-w-full text-xs font-mono shadow-sm">
+          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md max-w-full text-xs font-mono shadow-sm no-scrollbar">
             <span className="px-2 text-slate-400 flex items-center gap-1">
               <Filter className="w-3 h-3" />
             </span>

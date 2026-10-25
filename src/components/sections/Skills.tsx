@@ -291,7 +291,7 @@ export const Skills: React.FC = () => {
           </div>
 
           {/* Quick Filter Buttons */}
-          <div className="flex items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md overflow-x-auto text-xs font-mono">
+          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md text-xs font-mono no-scrollbar">
             {['all', 'Backend', 'Frontend', 'Cloud', 'Data', 'DevOps'].map((cat) => (
               <button
                 key={cat}
