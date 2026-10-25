@@ -41,14 +41,14 @@ export const Hero: React.FC = () => {
 
             {/* Concise Value Statement */}
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-              Software engineer with a foundation in <strong>Pure Mathematics (B.Sc Hons, 8.92 CGPA)</strong> and <strong>Computer Applications (MCA KIIT, 8.92 CGPA)</strong>. I build production-ready systems with Java / Spring Boot and Node.js, orchestrate AWS cloud infrastructure, and craft cross-platform web and mobile experiences.
+              Software engineer with a foundation in <strong>Pure Mathematics (B.Sc Hons, 8.92 CGPA)</strong> and <strong>Computer Applications (MCA KIIT, 9.04 CGPA)</strong>. I build production-ready systems with Java / Spring Boot and Node.js, orchestrate AWS cloud infrastructure, and craft cross-platform web and mobile experiences.
             </p>
 
             {/* Verified Credentials Pills */}
             <div className="flex flex-wrap gap-2.5 pt-1">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-white/10 text-xs text-slate-700 dark:text-slate-300">
                 <Award className="w-3.5 h-3.5 text-cyan-500" />
-                <span>KIIT MCA • 8.92 CGPA</span>
+                <span>KIIT MCA • 9.04 CGPA</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-white/10 text-xs text-slate-700 dark:text-slate-300">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />

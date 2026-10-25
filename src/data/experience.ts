@@ -8,7 +8,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     organization: 'Kalinga Institute of Industrial Technology (KIIT)',
     location: 'Bhubaneswar, Odisha, India',
     type: 'education',
-    scoreOrResult: 'CGPA: 8.92 / 10',
+    scoreOrResult: 'CGPA: 9.04 / 10',
     highlights: [
       'Advanced coursework in Distributed Systems, Data Structures & Algorithms, Cloud Computing, and Database Internals.',
       'Designed and deployed full-stack cloud projects including Sync Code (WebSockets) and SpeakIT (AWS Polly).',

@@ -57,7 +57,7 @@ export const About: React.FC = () => {
                 My path into engineering began through pure mathematics. Completing a <strong>B.Sc. in Mathematics with Honours (CGPA 8.92)</strong> gave me an appreciation for formal proofs, linear algebra, graph theory, and algorithmic complexity. That mathematical foundation directly translates into how I approach software: deterministic state transitions, low-overhead distributed systems, and clean architectural boundaries.
               </p>
               <p>
-                During my <strong>Master of Computer Applications at KIIT Bhubaneswar (CGPA 8.92)</strong>, I channeled this foundation into full-stack and cloud engineering. I designed low-latency collaborative systems using WebSockets, integrated cloud services like AWS Polly for real-time neural audio conversion, and developed statistical analytics dashboards for massive historical sports data.
+                During my <strong>Master of Computer Applications at KIIT Bhubaneswar (CGPA 9.04)</strong>, I channeled this foundation into full-stack and cloud engineering. I designed low-latency collaborative systems using WebSockets, integrated cloud services like AWS Polly for real-time neural audio conversion, and developed statistical analytics dashboards for massive historical sports data.
               </p>
               <p>
                 Today, I am actively channeling this backend and data background toward <strong>AI and GenAI engineering</strong> — exploring vector retrieval pipelines, LLM agent orchestration, and pairing Java/Spring Boot microservices with intelligent model layers to solve real-world problems.

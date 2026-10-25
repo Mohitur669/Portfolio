@@ -44,7 +44,7 @@ describe('Data Layer & Verification Integrity', () => {
   it('verifies educational milestones match official resume credentials', () => {
     const kiit = EXPERIENCES.find((e) => e.id === 'kiit-mca');
     expect(kiit).toBeDefined();
-    expect(kiit?.scoreOrResult).toBe('CGPA: 8.92 / 10');
+    expect(kiit?.scoreOrResult).toBe('CGPA: 9.04 / 10');
 
     const malda = EXPERIENCES.find((e) => e.id === 'malda-bsc');
     expect(malda).toBeDefined();
