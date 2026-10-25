@@ -100,6 +100,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
       },
     },
     {
+      id: 'nav-home',
+      title: 'Jump to Home / Introduction',
+      category: 'Navigation',
+      icon: <Terminal className="w-4 h-4 text-cyan-400" />,
+      action: () => {
+        document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+        onClose();
+      },
+    },
+    {
       id: 'nav-projects',
       title: 'Jump to Projects & Architecture Studies',
       category: 'Navigation',

@@ -92,6 +92,7 @@ export const App: React.FC = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+            <a href="#home" className="hover:text-cyan-500 transition-colors">Home</a>
             <a href="#about" className="hover:text-cyan-500 transition-colors">About</a>
             <a href="#skills" className="hover:text-cyan-500 transition-colors">Skills</a>
             <a href="#projects" className="hover:text-cyan-500 transition-colors">Projects</a>
@@ -135,6 +136,13 @@ export const App: React.FC = () => {
         {/* Mobile Nav Dropdown */}
         {mobileMenuOpen && (
           <div className="md:hidden border-b border-slate-200 dark:border-white/10 bg-slate-50/95 dark:bg-obsidian-950/95 backdrop-blur-xl px-4 py-4 space-y-3 text-sm font-mono">
+            <a
+              href="#home"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block py-1.5 text-slate-700 dark:text-slate-200"
+            >
+              // 00. Home
+            </a>
             <a
               href="#about"
               onClick={() => setMobileMenuOpen(false)}
