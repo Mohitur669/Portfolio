@@ -226,7 +226,7 @@ export const Contact: React.FC = () => {
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="Alex Rivera"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-slate-950/60 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-slate-950/60 text-base md:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-colors"
                         />
                       </div>
 
@@ -241,7 +241,7 @@ export const Contact: React.FC = () => {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="alex@company.com"
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-slate-950/60 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-slate-950/60 text-base md:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-colors"
                         />
                       </div>
                     </div>
@@ -257,23 +257,26 @@ export const Contact: React.FC = () => {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Discussing distributed backend architecture, engineering roles, or collaboration..."
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-slate-950/60 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-white/10 bg-white dark:bg-slate-950/60 text-base md:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-cyan-500 focus:outline-none transition-colors"
                       />
                     </div>
 
                     {/* Math verification challenge */}
-                    <div className="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-950/40 border border-slate-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                      <div className="flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
-                        <Shield className="w-4 h-4 text-cyan-500" />
-                        <span>Security verification: What is <strong>3 + 4</strong>?</span>
+                    <div className="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-950/40 border border-slate-200 dark:border-white/10 flex flex-row items-center justify-between gap-2.5">
+                      <div className="flex items-center gap-1.5 sm:gap-2 text-xs font-mono text-slate-600 dark:text-slate-400 min-w-0">
+                        <Shield className="w-4 h-4 text-cyan-500 shrink-0" />
+                        <span className="sm:hidden text-xs">Security: <strong>3 + 4 = ?</strong></span>
+                        <span className="hidden sm:inline">Security verification: What is <strong>3 + 4</strong>?</span>
                       </div>
                       <input
                         type="text"
+                        inputMode="numeric"
+                        pattern="[0-9]*"
                         required
                         value={mathAnswer}
                         onChange={(e) => setMathAnswer(e.target.value)}
                         placeholder="Result (7)"
-                        className="w-24 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/10 bg-white dark:bg-slate-900 text-xs font-mono text-center focus:ring-2 focus:ring-cyan-500 focus:outline-none"
+                        className="w-20 sm:w-24 px-2.5 sm:px-3 py-1.5 rounded-lg border border-slate-300 dark:border-white/10 bg-white dark:bg-slate-900 text-base md:text-xs font-mono text-center focus:ring-2 focus:ring-cyan-500 focus:outline-none shrink-0"
                       />
                     </div>
 

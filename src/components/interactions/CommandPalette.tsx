@@ -188,7 +188,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
       >
         {/* Search Input Bar */}
         <div className="flex items-center gap-3 px-4 py-3.5 border-b border-slate-200 dark:border-white/10 text-slate-500 dark:text-slate-400">
-          <Search className="w-5 h-5 text-cyan-500" />
+          <Search className="w-5 h-5 text-cyan-500 shrink-0" />
           <input
             ref={inputRef}
             type="text"
@@ -198,7 +198,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
               setSelectedIndex(0);
             }}
             placeholder="Type a command or search (e.g. 'theme', 'resume', 'sudo')..."
-            className="w-full bg-transparent text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none"
+            className="w-full bg-transparent text-base md:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none"
           />
           <button
             onClick={onClose}
@@ -224,10 +224,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
                   key={item.id}
                   onClick={item.action}
                   onMouseEnter={() => setSelectedIndex(idx)}
-                  className={`w-full text-left px-3.5 py-2.5 rounded-xl flex items-center justify-between text-xs transition-colors ${
+                  className={`w-full text-left px-3.5 py-3 md:py-2.5 rounded-xl flex items-center justify-between text-xs transition-colors min-h-[44px] md:min-h-0 ${
                     isSelected
                       ? 'bg-cyan-500 text-white font-semibold'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5 active:bg-cyan-500/20'
                   }`}
                 >
                   <div className="flex items-center gap-3 truncate">
@@ -237,7 +237,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
                     <span className="truncate">{item.title}</span>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 shrink-0">
                     <span
                       className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded ${
                         isSelected
@@ -257,7 +257,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
 
         {/* Footer shortcuts */}
         <div className="p-3 border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-black/30 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <span className="px-1.5 py-0.5 rounded border border-slate-300 dark:border-white/15 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300">
               ↑↓
             </span>
@@ -266,6 +266,9 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose 
               ↵
             </span>
             <span>Select</span>
+          </div>
+          <div className="md:hidden text-[10px] text-slate-400">
+            Tap any item to activate
           </div>
           <div className="flex items-center gap-1">
             <Command className="w-3 h-3" />

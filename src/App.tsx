@@ -12,7 +12,7 @@ import { CommandPalette } from './components/interactions/CommandPalette';
 import { CustomCursor } from './components/interactions/CustomCursor';
 import { OWNER_DATA } from './data/owner';
 import { useTheme } from './context/ThemeContext';
-import { Sun, Moon, FileDown, Menu, X } from 'lucide-react';
+import { Sun, Moon, FileDown, Menu, X, Search } from 'lucide-react';
 
 export const App: React.FC = () => {
   const [isStyleguide, setIsStyleguide] = useState(false);
@@ -20,6 +20,18 @@ export const App: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
   const { resolvedTheme, toggleTheme } = useTheme();
+
+  // Lock body scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -107,12 +119,22 @@ export const App: React.FC = () => {
           </nav>
 
           {/* Controls */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
+            {/* Mobile Command Palette Launcher */}
+            <button
+              onClick={() => setCommandPaletteOpen(true)}
+              title="Search & Quick Actions"
+              aria-label="Open Command Palette"
+              className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:border-cyan-500 transition-colors"
+            >
+              <Search className="w-4 h-4" />
+            </button>
+
             <button
               onClick={toggleTheme}
               title="Toggle color theme"
               aria-label="Toggle theme"
-              className="p-2 rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:border-cyan-500 transition-colors"
+              className="p-2.5 md:p-2 min-w-[44px] md:min-w-0 min-h-[44px] md:min-h-0 flex items-center justify-center rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:border-cyan-500 transition-colors"
             >
               {resolvedTheme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-500" />}
             </button>
@@ -131,7 +153,7 @@ export const App: React.FC = () => {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300"
+              className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300"
               aria-label="Toggle mobile menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -141,59 +163,61 @@ export const App: React.FC = () => {
 
         {/* Mobile Nav Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-b border-slate-200 dark:border-white/10 bg-slate-50/95 dark:bg-obsidian-950/95 backdrop-blur-xl px-4 py-4 space-y-3 text-sm font-mono">
+          <div className="md:hidden border-b border-slate-200 dark:border-white/10 bg-slate-50/98 dark:bg-obsidian-950/98 backdrop-blur-2xl px-4 py-4 space-y-2 text-sm font-mono shadow-2xl max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain">
             <a
               href="#home"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-1.5 text-slate-700 dark:text-slate-200"
+              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
             >
-              // 00. Home
+              Home
             </a>
             <a
               href="#about"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-1.5 text-slate-700 dark:text-slate-200"
+              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
             >
-              // 01. About
+              About
             </a>
             <a
               href="#skills"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-1.5 text-slate-700 dark:text-slate-200"
+              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
             >
-              // 02. Technical Skills
+              Skills
             </a>
             <a
               href="#projects"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-1.5 text-slate-700 dark:text-slate-200"
+              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
             >
-              // 03. Projects
+              Projects
             </a>
             <a
               href="#experience"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-1.5 text-slate-700 dark:text-slate-200"
+              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
             >
-              // 04. Journey & Milestones
+              Journey
             </a>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-1.5 text-slate-700 dark:text-slate-200"
+              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
             >
-              // 05. Contact
+              Contact
             </a>
-            <a
-              href={OWNER_DATA.resumePath}
-              target="_blank"
-              rel="noopener noreferrer"
-              download="Mohd_Mohitur_Rahaman_Resume.pdf"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cyan-600 text-white text-xs font-semibold"
-            >
-              <FileDown className="w-3.5 h-3.5" />
-              <span>Download Resume</span>
-            </a>
+            <div className="pt-2 border-t border-slate-200 dark:border-white/10">
+              <a
+                href={OWNER_DATA.resumePath}
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Mohd_Mohitur_Rahaman_Resume.pdf"
+                className="flex items-center justify-center gap-2 min-h-[44px] px-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold shadow-glow"
+              >
+                <FileDown className="w-4 h-4" />
+                <span>Download Resume (PDF)</span>
+              </a>
+            </div>
           </div>
         )}
       </header>

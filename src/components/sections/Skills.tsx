@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SKILL_CATEGORIES } from '../../data/skills';
-import { Layers } from 'lucide-react';
+import { Layers, Filter, ChevronDown } from 'lucide-react';
 
 interface TechItem {
   id: string;
@@ -129,8 +129,30 @@ export const Skills: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick Filter Buttons (Guaranteed One-Liner) */}
-          <div className="shrink-0 flex items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md overflow-x-auto text-xs font-mono no-scrollbar">
+          {/* Tech Stack Filter: Compact Dropdown on Mobile (< md), Pill Row on Desktop (>= md) */}
+          <div className="md:hidden relative w-full max-w-full">
+            <div className="relative flex items-center w-full max-w-full">
+              <span className="absolute left-3.5 text-slate-400 pointer-events-none flex items-center">
+                <Filter className="w-3.5 h-3.5" />
+              </span>
+              <select
+                value={activeCategoryFilter}
+                onChange={(e) => setActiveCategoryFilter(e.target.value)}
+                aria-label="Filter tech stack by category"
+                className="w-full max-w-full appearance-none pl-9 pr-9 py-2 rounded-xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 text-xs font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 truncate"
+              >
+                {['all', 'Backend', 'Frontend', 'Cloud', 'Data', 'DevOps'].map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat === 'all' ? `All Tech (${TECH_STACK_ITEMS.length})` : cat}
+                  </option>
+                ))}
+              </select>
+              <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Desktop Category Filter Pills */}
+          <div className="hidden md:flex shrink-0 items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md overflow-x-auto text-xs font-mono no-scrollbar">
             {['all', 'Backend', 'Frontend', 'Cloud', 'Data', 'DevOps'].map((cat) => (
               <button
                 key={cat}

@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
           {/* Left Column: Core Identity & Messaging */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="order-2 lg:order-1 lg:col-span-7 space-y-6">
 
             {/* Live Availability Pill */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-mono">
@@ -60,8 +60,8 @@ export const Hero: React.FC = () => {
               </div>
             </div>
 
-            {/* Clear Primary & Secondary CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-3">
+            {/* Clear Primary & Secondary CTAs (Desktop) */}
+            <div className="hidden lg:flex flex-wrap items-center gap-4 pt-3">
               <a
                 href="#projects"
                 className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold shadow-glow hover:opacity-95 transition-all flex items-center gap-2 group focus:ring-2 focus:ring-cyan-400"
@@ -101,7 +101,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Visual Portrait with Minimalistic Light Gray Border */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-[460px]">
 
               {/* Minimalist Card Container */}
@@ -169,14 +169,52 @@ export const Hero: React.FC = () => {
                 <div className="grid grid-cols-2 gap-2 pt-4 font-mono text-xs">
                   <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-100 dark:border-slate-800">
                     <span className="text-slate-500 dark:text-slate-400 block text-[11px]">Primary Core</span>
-                    <strong className="text-slate-900 dark:text-slate-100 font-semibold">Java • Spring • React</strong>
+                    <strong className="text-slate-900 dark:text-slate-100 font-semibold">Java • Spring Boot</strong>
                   </div>
                   <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-950/60 border border-slate-100 dark:border-slate-800">
                     <span className="text-slate-500 dark:text-slate-400 block text-[11px]">Cloud Infra</span>
-                    <strong className="text-slate-900 dark:text-slate-100 font-semibold">AWS • Docker • Edge</strong>
+                    <strong className="text-slate-900 dark:text-slate-100 font-semibold">AWS • Docker</strong>
                   </div>
                 </div>
 
+              </div>
+
+              {/* Mobile Primary & Secondary CTAs (rendered directly below the profile card) */}
+              <div className="lg:hidden flex flex-wrap items-center justify-center gap-3 pt-6 w-full">
+                <a
+                  href="#projects"
+                  className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold shadow-glow hover:opacity-95 transition-all flex items-center justify-center gap-2 group focus:ring-2 focus:ring-cyan-400"
+                >
+                  <span>View Projects &amp; Architecture</span>
+                  <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                </a>
+
+                <a
+                  href="#contact"
+                  className="flex-1 sm:flex-initial px-5 py-3 rounded-xl border border-slate-300 dark:border-white/15 bg-white dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-cyan-500 transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>Let's Talk</span>
+                </a>
+
+                <a
+                  href={OWNER_DATA.resumePath}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Mohd_Mohitur_Rahaman_Resume.pdf"
+                  className="flex-1 sm:flex-initial px-5 py-3 rounded-xl border border-slate-300 dark:border-white/15 bg-white dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-cyan-500 transition-colors flex items-center justify-center gap-2"
+                >
+                  <FileDown className="w-4 h-4 text-slate-400" />
+                  <span>Resume</span>
+                </a>
+
+                <a
+                  href={`mailto:${OWNER_DATA.email}`}
+                  className="p-3 rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:text-cyan-500 hover:border-cyan-500 transition-colors flex items-center justify-center"
+                  aria-label="Direct Email Contact"
+                  title="Direct Email Contact"
+                >
+                  <Mail className="w-5 h-5" />
+                </a>
               </div>
 
             </div>

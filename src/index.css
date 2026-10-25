@@ -13,6 +13,9 @@
   body {
     @apply font-sans bg-slate-50 text-slate-900 dark:bg-obsidian-950 dark:text-slate-100 transition-colors duration-200 selection:bg-cyan-500 selection:text-white;
     min-height: 100vh;
+    min-height: 100dvh;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   :focus-visible {
@@ -63,6 +66,23 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Safe area insets for notches and home indicators */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.safe-left {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+
+.safe-right {
+  padding-right: env(safe-area-inset-right, 0px);
 }
 
 /* Respect reduced motion */

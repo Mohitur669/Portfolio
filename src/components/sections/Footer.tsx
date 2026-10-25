@@ -1,6 +1,6 @@
 import React from 'react';
 import { OWNER_DATA } from '../../data/owner';
-import { Github, Linkedin, ArrowUp, ShieldCheck, Heart } from 'lucide-react';
+import { Github, Linkedin, ArrowUp, ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -71,8 +71,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Credits & Verification - Compact vertical space */}
         <div className="mt-3.5 pt-3 border-t border-slate-100 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] font-mono">
           <p className="flex items-center gap-1">
-            <span>© 2026 {OWNER_DATA.name}. Designed & Engineered with</span>
-            <Heart className="w-3 h-3 text-red-500 fill-red-500 inline" />
+            <span>© 2026 {OWNER_DATA.name}.</span>
           </p>
           <div className="flex items-center gap-2 text-slate-400">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />

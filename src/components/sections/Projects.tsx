@@ -22,7 +22,7 @@ import {
 
 export const Projects: React.FC = () => {
   const [filter, setFilter] = useState<string>('all');
-  const [expandedProjectId, setExpandedProjectId] = useState<string | null>('speakit');
+  const [expandedProjectId, setExpandedProjectId] = useState<string | null>(null);
   const [activeTabByProject, setActiveTabByProject] = useState<Record<string, 'pipeline' | 'decisions' | 'stack'>>({
     speakit: 'pipeline',
     'code-editor': 'pipeline',
@@ -79,8 +79,29 @@ export const Projects: React.FC = () => {
             </p>
           </div>
 
-          {/* Category Filter Pills (Guaranteed One-Liner, Shifted Left) */}
-          <div className="shrink-0 flex items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md overflow-x-auto no-scrollbar text-xs font-mono shadow-sm">
+          {/* Category Filter: Compact Dropdown on Mobile (< md), Pill Row on Desktop (>= md) */}
+          <div className="md:hidden relative w-full max-w-full">
+            <div className="relative flex items-center w-full max-w-full">
+              <span className="absolute left-3.5 text-slate-400 pointer-events-none flex items-center">
+                <Filter className="w-3.5 h-3.5" />
+              </span>
+              <select
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                aria-label="Filter projects by category"
+                className="w-full max-w-full appearance-none pl-9 pr-9 py-2 rounded-xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 text-xs font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 truncate"
+              >
+                <option value="all">All Projects (5)</option>
+                <option value="cloud-backend">Cloud &amp; Backend</option>
+                <option value="fullstack">Full-Stack</option>
+                <option value="data-ai">Data &amp; Analytics</option>
+              </select>
+              <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Desktop Category Filter Pills */}
+          <div className="hidden md:flex shrink-0 items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md overflow-x-auto no-scrollbar text-xs font-mono shadow-sm">
             <span className="px-2 text-slate-400 flex items-center gap-1">
               <Filter className="w-3 h-3" />
             </span>
@@ -195,13 +216,8 @@ export const Projects: React.FC = () => {
 
                       {/* Title & Tagline */}
                       <div>
-                        <h3 className="text-xl sm:text-2xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-                          <span>{project.title}</span>
-                          {project.links.live && (
-                            <span className="text-xs font-mono font-normal text-cyan-600 dark:text-cyan-400 px-2 py-0.5 rounded-md bg-cyan-500/10 border border-cyan-500/20">
-                              {project.links.live.replace(/^https?:\/\//, '')}
-                            </span>
-                          )}
+                        <h3 className="text-xl sm:text-2xl font-display font-extrabold text-slate-900 dark:text-white tracking-tight">
+                          {project.title}
                         </h3>
                         <p className="text-sm font-medium text-slate-700 dark:text-slate-300 mt-1">
                           {project.tagline}
@@ -254,14 +270,14 @@ export const Projects: React.FC = () => {
                             }`}
                             aria-label={`Open live deployment for ${project.title}`}
                           >
-                            <span>Live App</span>
+                            <span>Visit</span>
                             <ExternalLink className="w-3.5 h-3.5" />
                           </a>
                         )}
                       </div>
 
                       <div className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-600 dark:text-cyan-400 font-semibold py-1">
-                        <span>{isExpanded ? 'Hide Architecture' : 'Inspect Architecture'}</span>
+                        <span>{isExpanded ? 'Read Less' : 'Read More'}</span>
                         {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                       </div>
                     </div>
@@ -277,37 +293,39 @@ export const Projects: React.FC = () => {
                   >
                     {/* Architectural Navigation Tabs */}
                     <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-4 gap-4 flex-wrap">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar max-w-full pb-1">
                         <button
                           type="button"
                           onClick={() => setActiveTab(project.id, 'pipeline')}
-                          className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors flex items-center gap-1.5 ${
+                          className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
                             activeTab === 'pipeline'
                               ? 'bg-cyan-600 text-white font-bold shadow-sm'
                               : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-cyan-500 border border-slate-200 dark:border-white/10'
                           }`}
                         >
                           <Zap className="w-3.5 h-3.5" />
-                          <span>System Flow &amp; Pipeline</span>
+                          <span className="sm:hidden">Pipeline Flow</span>
+                          <span className="hidden sm:inline">System Flow &amp; Pipeline</span>
                         </button>
 
                         <button
                           type="button"
                           onClick={() => setActiveTab(project.id, 'decisions')}
-                          className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors flex items-center gap-1.5 ${
+                          className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
                             activeTab === 'decisions'
                               ? 'bg-cyan-600 text-white font-bold shadow-sm'
                               : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-cyan-500 border border-slate-200 dark:border-white/10'
                           }`}
                         >
                           <ShieldCheck className="w-3.5 h-3.5" />
-                          <span>Engineering Rationale &amp; Trade-offs</span>
+                          <span className="sm:hidden">Decisions &amp; Trade-offs</span>
+                          <span className="hidden sm:inline">Engineering Rationale &amp; Trade-offs</span>
                         </button>
 
                         <button
                           type="button"
                           onClick={() => setActiveTab(project.id, 'stack')}
-                          className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors flex items-center gap-1.5 ${
+                          className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors flex items-center gap-1.5 whitespace-nowrap shrink-0 ${
                             activeTab === 'stack'
                               ? 'bg-cyan-600 text-white font-bold shadow-sm'
                               : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-cyan-500 border border-slate-200 dark:border-white/10'
@@ -319,7 +337,7 @@ export const Projects: React.FC = () => {
                       </div>
 
                       {project.metrics && (
-                        <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg">
+                        <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg shrink-0">
                           ⚡ {project.metrics}
                         </div>
                       )}
@@ -482,7 +500,7 @@ export const Projects: React.FC = () => {
                               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-600 text-white text-xs font-semibold hover:bg-cyan-500 transition-colors"
                             >
                               <ExternalLink className="w-4 h-4" />
-                              <span>Open Live Deployment ({project.links.live.replace(/^https?:\/\//, '')})</span>
+                              <span>Open Live Deployment</span>
                             </a>
                           )}
                         </div>

@@ -358,7 +358,7 @@ export const SystemTopology: React.FC = () => {
                       rel="noreferrer"
                       className="inline-flex items-center justify-center gap-1 py-2 px-3 rounded-xl bg-cyan-600 text-white text-xs font-semibold hover:bg-cyan-500 transition-colors"
                     >
-                      <span>Live App</span>
+                      <span>Visit</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   )}
