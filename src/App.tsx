@@ -83,11 +83,17 @@ export const App: React.FC = () => {
       {/* Top Navigation */}
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-slate-50/80 dark:bg-obsidian-950/80 border-b border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2 group font-display font-extrabold text-lg tracking-tight">
-            <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-glow">
-              M
-            </span>
-            <span className="text-slate-900 dark:text-white font-display font-extrabold">{OWNER_DATA.name}</span>
+          <a href="#home" className="flex items-center gap-2.5 group font-display font-extrabold text-lg tracking-tight">
+            <div className="relative w-8 h-8 rounded-full overflow-hidden border border-slate-300 dark:border-white/20 bg-slate-200 dark:bg-slate-800 shadow-sm transition-transform duration-200 group-hover:scale-105 shrink-0">
+              <img
+                src="img/memoji.webp"
+                alt="Mohd Mohitur Rahaman Avatar"
+                className="w-full h-full object-cover"
+                width={32}
+                height={32}
+              />
+            </div>
+            <span className="text-slate-900 dark:text-white font-display font-extrabold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">{OWNER_DATA.name}</span>
           </a>
 
           {/* Desktop Nav */}
