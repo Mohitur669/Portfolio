@@ -51,26 +51,13 @@ const TECH_STACK_ITEMS: TechItem[] = [
   {
     id: 'python',
     name: 'Python',
-    category: 'Language',
+    category: 'Data',
     color: '#3776AB',
     bgColor: 'rgba(55, 118, 171, 0.1)',
-    usedIn: 'Olympic Data Analysis, Web Scraper',
+    usedIn: 'Data Science, Olympic Analytics, Modeling',
     iconSvg: (
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
         <path d="M11.9 2C8.6 2 6.6 2.5 6.6 4.3v2.2h5.4V8H4.6C2.8 8 2 9.6 2 12.3c0 2.6.9 4.3 2.6 4.3h1.7v-2.3c0-1.8 1.5-3.3 3.3-3.3h5.4c1.5 0 2.7-1.2 2.7-2.7V4.3C17.7 2.5 15.2 2 11.9 2zm-2.4 2.2c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm2.6 17.8c3.3 0 5.3-.5 5.3-2.3v-2.2H12V16h7.4c1.8 0 2.6-1.6 2.6-4.3 0-2.6-.9-4.3-2.6-4.3h-1.7v2.3c0 1.8-1.5 3.3-3.3 3.3H9c-1.5 0-2.7 1.2-2.7 2.7v4c0 1.8 2.5 2.3 5.8 2.3zm2.4-2.2c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'c',
-    name: 'C Programming',
-    category: 'Language',
-    color: '#00599C',
-    bgColor: 'rgba(0, 89, 156, 0.1)',
-    usedIn: 'Data Structures, Memory & Algorithms',
-    iconSvg: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm3.2-5.7a5.5 5.5 0 1 1 0-4.6l1.7-1A7.5 7.5 0 1 0 17 12a7.6 7.6 0 0 0-.1-1.3l-1.7 1z" />
       </svg>
     ),
   },
@@ -80,7 +67,7 @@ const TECH_STACK_ITEMS: TechItem[] = [
     category: 'Frontend',
     color: '#F7DF1E',
     bgColor: 'rgba(247, 223, 30, 0.1)',
-    usedIn: 'Full-Stack Web, Code Editor, Node.js',
+    usedIn: 'Full-Stack Web, Code Editor, Scripting',
     iconSvg: (
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
         <path d="M3 3h18v18H3V3zm13.7 14.5c1.4 0 2.3-.7 2.8-1.7l-1.6-1c-.3.5-.7.8-1.2.8-.7 0-1.1-.4-1.1-1.3v-5.1h-2v5.3c0 2 1.1 3 3.1 3zm-6.2-.1c1.2 0 2-.6 2.4-1.5l-1.6-1c-.2.4-.5.6-1 .6-.6 0-.9-.3-.9-.8 0-.6.4-.8 1.4-1.2 1.7-.7 2.4-1.4 2.4-2.8 0-1.6-1.2-2.7-3-2.7-1.6 0-2.6.8-3 1.9l1.6.9c.3-.5.7-.8 1.3-.8.6 0 .9.3.9.7 0 .5-.3.7-1.2 1.1-1.8.7-2.6 1.5-2.6 2.9 0 1.7 1.3 2.8 3.2 2.8z" />
@@ -93,36 +80,10 @@ const TECH_STACK_ITEMS: TechItem[] = [
     category: 'Frontend',
     color: '#3178C6',
     bgColor: 'rgba(49, 120, 198, 0.1)',
-    usedIn: 'Code Editor, Type-Safe React Apps',
+    usedIn: 'Code Editor, Type-Safe Web Architecture',
     iconSvg: (
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
         <path d="M3 3h18v18H3V3zm7.8 7.2v7.3H9v-7.3H6.8V8.7h6.2v1.5h-2.2zm4.5 7.4c1.4 0 2.4-.7 3-1.8l-1.5-.9c-.3.5-.7.8-1.4.8-.8 0-1.3-.4-1.3-1.1 0-.6.4-.9 1.4-1.3 1.8-.7 2.7-1.4 2.7-2.9 0-1.7-1.3-2.8-3.2-2.8-1.7 0-2.9.9-3.4 2.2l1.6.8c.3-.6.8-1 1.6-1 .8 0 1.3.4 1.3 1 0 .5-.4.8-1.3 1.2-1.9.8-2.8 1.6-2.8 3.1 0 1.8 1.3 2.7 3.3 2.7z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'react',
-    name: 'React.js',
-    category: 'Frontend',
-    color: '#61DAFB',
-    bgColor: 'rgba(97, 218, 251, 0.1)',
-    usedIn: 'SpeakIT Web, Code Editor UI, Portfolio',
-    iconSvg: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm0-7C6.5 2.5 2 6.8 2 12s4.5 9.5 10 9.5 10-4.3 10-9.5S17.5 2.5 12 2.5zm0 17c-4.4 0-8-3.4-8-7.5S7.6 4.5 12 4.5s8 3.4 8 7.5-3.6 7.5-8 7.5z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'nextjs',
-    name: 'Next.js',
-    category: 'Frontend',
-    color: '#000000',
-    bgColor: 'rgba(0, 0, 0, 0.1)',
-    usedIn: 'Server-Side Rendering, Hybrid Apps',
-    iconSvg: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.8 14.5l-4.7-6.2v6.2H9.3V7.5h1.9l4.6 6.1V7.5h1.8v9h-1.8z" />
       </svg>
     ),
   },
@@ -132,23 +93,10 @@ const TECH_STACK_ITEMS: TechItem[] = [
     category: 'Backend',
     color: '#339933',
     bgColor: 'rgba(51, 153, 51, 0.1)',
-    usedIn: 'Code Editor Server, WebSockets',
+    usedIn: 'Code Editor Server, WebSockets, APIs',
     iconSvg: (
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2l9 5.2v10.4L12 22l-9-4.4V7.2L12 2zm0 2.3L5 8.2v7.6l7 3.5 7-3.5V8.2l-7-3.9z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'express',
-    name: 'Express.js',
-    category: 'Backend',
-    color: '#71717A',
-    bgColor: 'rgba(113, 113, 122, 0.1)',
-    usedIn: 'RESTful API Routing, Socket Hub',
-    iconSvg: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14.8h-2v-4.2H7.5v-1.6h3.5V8.5h2v2.5H16v1.6h-3v4.2z" />
       </svg>
     ),
   },
@@ -192,19 +140,6 @@ const TECH_STACK_ITEMS: TechItem[] = [
     ),
   },
   {
-    id: 'mongodb',
-    name: 'MongoDB',
-    category: 'Data',
-    color: '#47A248',
-    bgColor: 'rgba(71, 162, 72, 0.1)',
-    usedIn: 'MERN Stack Applications, Document Models',
-    iconSvg: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2C11.5 2.5 7 9 7 14c0 3 2.2 5.5 5 5.9v2.1h.5v-2.1c2.8-.4 5-2.9 5-5.9 0-5-4.5-11.5-5.5-12zm0 16c-1.9 0-3.5-1.6-3.5-3.5 0-2.8 2.5-6.5 3.5-8.2 1 1.7 3.5 5.4 3.5 8.2 0 1.9-1.6 3.5-3.5 3.5z" />
-      </svg>
-    ),
-  },
-  {
     id: 'mysql',
     name: 'MySQL / SQL',
     category: 'Data',
@@ -240,19 +175,6 @@ const TECH_STACK_ITEMS: TechItem[] = [
     iconSvg: (
       <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 2C9.5 2 7.5 4 7.5 6.5c0 1.2.4 2.3 1.1 3.1-.3.8-.6 1.7-.6 2.7 0 2.5 1.5 4.7 3.5 5.7-.3.7-.8 1.4-1.5 1.8-.7.4-1.5.6-2.5.6H7c-.6 0-1 .4-1 1s.4 1 1 1h.5c1.5 0 2.9-.4 4.1-1.1 1.2.7 2.6 1.1 4.1 1.1h.5c.6 0 1-.4 1-1s-.4-1-1-1h-.5c-1 0-1.8-.2-2.5-.6-.7-.4-1.2-1.1-1.5-1.8 2-1 3.5-3.2 3.5-5.7 0-1-.3-1.9-.6-2.7.7-.8 1.1-1.9 1.1-3.1C16.5 4 14.5 2 12 2zm-1.5 4c.4 0 .8.4.8.8s-.4.8-.8.8-.8-.4-.8-.8.4-.8.8-.8zm3 0c.4 0 .8.4.8.8s-.4.8-.8.8-.8-.4-.8-.8.4-.8.8-.8z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'html5',
-    name: 'HTML5 & CSS3',
-    category: 'Frontend',
-    color: '#E34F26',
-    bgColor: 'rgba(227, 79, 38, 0.1)',
-    usedIn: 'Accessible Semantic DOM, Responsive Layouts',
-    iconSvg: (
-      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M4 2l1.5 17L12 22l6.5-3L20 2H4zm13.3 5H8.7l.2 2.5h8.2l-.6 6.5-4.3 1.2-4.3-1.2-.3-3.5h2.2l.2 1.8 2.2.6 2.2-.6.2-2.3H8.3L7.7 5h9.8l-.2 2z" />
       </svg>
     ),
   },
@@ -302,7 +224,7 @@ export const Skills: React.FC = () => {
                     : 'text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
-                {cat === 'all' ? 'All (18)' : cat}
+                {cat === 'all' ? `All (${TECH_STACK_ITEMS.length})` : cat}
               </button>
             ))}
           </div>
@@ -383,14 +305,14 @@ export const Skills: React.FC = () => {
                   Full-Stack &amp; Web Systems
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                  Proficient in building responsive, scalable full-stack applications with <strong>Java / Spring Boot</strong>, <strong>Node.js</strong>, and <strong>React.js</strong>. Experienced with full-duplex WebSockets, stateless JWT auth, and containerized deployments.
+                  Proficient in building responsive, scalable full-stack applications with <strong>Java / Spring Boot</strong>, <strong>Node.js</strong>, and <strong>TypeScript</strong>. Experienced with full-duplex WebSockets, stateless JWT auth, and containerized deployments.
                 </p>
               </div>
 
               <div className="pt-3 border-t border-slate-100 dark:border-white/5 flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-600 dark:text-slate-400">
                 <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5">Java</span>
                 <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5">Spring Boot</span>
-                <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5">React</span>
+                <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5">TypeScript</span>
                 <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5">WebSockets</span>
               </div>
             </div>

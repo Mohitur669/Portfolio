@@ -6,10 +6,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     description: 'Scalable services, REST APIs, WebSocket engines, and data stores.',
     items: [
       { name: 'Java / Spring Boot', level: 'Core', iconName: 'Coffee', usedIn: ['Enterprise Backend', 'speakit', 'Cloud APIs'] },
-      { name: 'Node.js & Express', level: 'Core', iconName: 'Server', usedIn: ['code-editor', 'speakit'] },
+      { name: 'Node.js (APIs & Microservices)', level: 'Core', iconName: 'Server', usedIn: ['code-editor', 'speakit'] },
       { name: 'Socket.io / WebSockets', level: 'Advanced', iconName: 'Radio', usedIn: ['code-editor'] },
       { name: 'PostgreSQL / MySQL', level: 'Core', iconName: 'Database', usedIn: ['Relational Data', 'Academic Systems', 'Cloud Apps'] },
-      { name: 'MongoDB', level: 'Core', iconName: 'Layers', usedIn: ['MERN Stack', 'Document Store'] },
       { name: 'REST API Design', level: 'Core', iconName: 'Globe', usedIn: ['speakit', 'code-editor'] },
     ],
   },
@@ -30,12 +29,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     description: 'Modern, reactive, accessible interfaces with deterministic state across web and iOS.',
     items: [
       { name: 'Swift / iOS (SwiftUI)', level: 'Core', iconName: 'Smartphone', usedIn: ['speakit'] },
-      { name: 'React.js', level: 'Core', iconName: 'Code', usedIn: ['code-editor', 'speakit', 'Portfolio V2'] },
       { name: 'TypeScript', level: 'Core', iconName: 'FileCode', usedIn: ['code-editor', 'Portfolio V2'] },
-      { name: 'Tailwind CSS', level: 'Core', iconName: 'Palette', usedIn: ['Portfolio V2', 'code-editor'] },
       { name: 'JavaScript (ESNext)', level: 'Core', iconName: 'Code2', usedIn: ['code-editor', 'speakit'] },
-      { name: 'HTML5 & Accessible DOM', level: 'Core', iconName: 'Layout', usedIn: ['All Web Apps'] },
-      { name: 'Next.js', level: 'Advanced', iconName: 'Zap', usedIn: ['SSR & Hybrid Architecture'] },
+      { name: 'Tailwind CSS & Modern UI', level: 'Core', iconName: 'Palette', usedIn: ['Portfolio V2', 'code-editor'] },
     ],
   },
   {
