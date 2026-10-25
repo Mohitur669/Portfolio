@@ -5,10 +5,10 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     name: 'Backend & Systems',
     description: 'Scalable services, REST APIs, WebSocket engines, and data stores.',
     items: [
-      { name: 'Java / Spring Boot', level: 'Core', iconName: 'Coffee', usedIn: ['Enterprise Backend', 'file-hider', 'Cloud APIs'] },
+      { name: 'Java / Spring Boot', level: 'Core', iconName: 'Coffee', usedIn: ['Enterprise Backend', 'speakit', 'Cloud APIs'] },
       { name: 'Node.js & Express', level: 'Core', iconName: 'Server', usedIn: ['code-editor', 'speakit'] },
       { name: 'Socket.io / WebSockets', level: 'Advanced', iconName: 'Radio', usedIn: ['code-editor'] },
-      { name: 'PostgreSQL / MySQL', level: 'Core', iconName: 'Database', usedIn: ['file-hider', 'Relational Data', 'Academic Systems'] },
+      { name: 'PostgreSQL / MySQL', level: 'Core', iconName: 'Database', usedIn: ['Relational Data', 'Academic Systems', 'Cloud Apps'] },
       { name: 'MongoDB', level: 'Core', iconName: 'Layers', usedIn: ['MERN Stack', 'Document Store'] },
       { name: 'REST API Design', level: 'Core', iconName: 'Globe', usedIn: ['speakit', 'code-editor'] },
     ],

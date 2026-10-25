@@ -13,8 +13,8 @@ describe('Data Layer & Verification Integrity', () => {
     expect(OWNER_DATA.resumePath).toBe('https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf');
   });
 
-  it('contains 6 verified real projects with valid links and architectures', () => {
-    expect(PROJECTS.length).toBe(6);
+  it('contains verified real projects with valid links and architectures', () => {
+    expect(PROJECTS.length).toBe(5);
     PROJECTS.forEach((project) => {
       expect(project.id).toBeDefined();
       expect(project.title).toBeDefined();

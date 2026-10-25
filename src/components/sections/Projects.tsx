@@ -85,7 +85,7 @@ export const Projects: React.FC = () => {
               <Filter className="w-3 h-3" />
             </span>
             {[
-              { id: 'all', label: 'All Projects (6)' },
+              { id: 'all', label: 'All Projects (5)' },
               { id: 'cloud-backend', label: 'Cloud & Backend' },
               { id: 'fullstack', label: 'Full-Stack' },
               { id: 'data-ai', label: 'Data & Analytics' },
