@@ -170,3 +170,23 @@
 - **Verification**:
   - Verified across 320px, 360px, 375px, 390px, 412px, 430px: 100% single line confirmed, no truncation above 360px.
   - Desktop Regression Guard: **100% PASSED** (0 visual diffs).
+
+
+---
+
+### Update: Integration of Vercel Web Analytics and Speed Insights
+
+- **Installed Packages**:
+  - `@vercel/analytics`: `^2.0.1`
+  - `@vercel/speed-insights`: `^2.0.0`
+- **Changes Applied**:
+  - `src/main.tsx`:
+    - Imported `{ Analytics }` from `@vercel/analytics/react`.
+    - Imported `{ SpeedInsights }` from `@vercel/speed-insights/react`.
+    - Mounted `<Analytics />` and `<SpeedInsights />` inside the root `<React.StrictMode>` alongside the providers.
+  - `vercel.json`:
+    - Created configuration file with standard SPA wildcard rewrite rule (`/(.*)` -> `/index.html`) to ensure seamless client-side routing on Vercel deployments.
+- **Verification**:
+  - Production build (`npm run build`) succeeded with 0 errors.
+  - Unit tests (`npm run test`) 100% passed.
+  - Desktop Regression Guard (`npm run test:desktop-regression`) 100% passed (0 visual diffs).
