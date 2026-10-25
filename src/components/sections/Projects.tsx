@@ -65,8 +65,8 @@ export const Projects: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-          <div>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+          <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-mono mb-2 border border-cyan-500/20">
               <Layers className="w-3.5 h-3.5" />
               <span>Production Code &amp; Verified Systems</span>
@@ -74,13 +74,13 @@ export const Projects: React.FC = () => {
             <h2 className="text-2xl sm:text-4xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white">
               Verified Technical Projects
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
+            <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400">
               Authentic software engineered for production and open source. Click any project card to inspect its real architectural pipelines, constraints, and verified outcomes.
             </p>
           </div>
 
-          {/* Category Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md max-w-full text-xs font-mono shadow-sm no-scrollbar">
+          {/* Category Filter Pills (Guaranteed One-Liner, Shifted Left) */}
+          <div className="shrink-0 flex items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md overflow-x-auto no-scrollbar text-xs font-mono shadow-sm">
             <span className="px-2 text-slate-400 flex items-center gap-1">
               <Filter className="w-3 h-3" />
             </span>

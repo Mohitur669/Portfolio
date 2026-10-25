@@ -115,8 +115,8 @@ export const Skills: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-xs font-mono mb-2 border border-cyan-500/20">
               <Layers className="w-3.5 h-3.5" />
               <span>Skills &amp; Technology Stack</span>
@@ -124,13 +124,13 @@ export const Skills: React.FC = () => {
             <h2 className="text-2xl sm:text-4xl font-display font-extrabold tracking-tight text-slate-900 dark:text-white">
               Tech-Stacks &amp; Tools I Work With
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl">
+            <p className="mt-2 text-sm sm:text-base text-slate-600 dark:text-slate-400">
               Proficient in an enterprise tech stack spanning Java, Spring Boot, WebSockets, AWS cloud architecture, and modern JavaScript/TypeScript ecosystems.
             </p>
           </div>
 
-          {/* Quick Filter Buttons */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md text-xs font-mono no-scrollbar">
+          {/* Quick Filter Buttons (Guaranteed One-Liner) */}
+          <div className="shrink-0 flex items-center gap-1.5 p-1 rounded-xl border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md overflow-x-auto text-xs font-mono no-scrollbar">
             {['all', 'Backend', 'Frontend', 'Cloud', 'Data', 'DevOps'].map((cat) => (
               <button
                 key={cat}
