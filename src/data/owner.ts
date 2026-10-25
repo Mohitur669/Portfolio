@@ -1,0 +1,25 @@
+export const OWNER_DATA = {
+  name: 'Mohd Mohitur Rahaman',
+  shortName: 'Mohitur',
+  role: 'Full-Stack & Cloud Engineer',
+  focus: 'Distributed Systems, Cloud Architecture & AI Engineering',
+  location: 'Kolkata / Malda, West Bengal, India',
+  email: 'mohitur669@gmail.com',
+  secondaryEmail: 'mohiturrahman02@gmail.com',
+  phone: '+91 XXXXX XXXXX',
+  altPhone: '+91 86170 27551',
+  availability: 'Available for high-impact roles & technical collaboration',
+  bio: 'Software engineer with a foundation in Pure Mathematics (B.Sc Hons, 8.92 CGPA) and Computer Applications (MCA KIIT, 8.92 CGPA). Specializes in architecting scalable full-stack applications with Spring Boot, Node.js, and React, orchestrating AWS cloud infrastructure, and building data-driven systems transitioning toward GenAI applications.',
+  socials: {
+    github: 'https://github.com/Mohitur669',
+    linkedin: 'https://linkedin.com/in/mohitur02',
+    blog: 'https://rahamanmohitur.blogspot.com/',
+  },
+  resumePath: 'https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf',
+  stats: [
+    { label: 'MCA CGPA', value: '8.92', hint: 'KIIT Bhubaneswar' },
+    { label: 'B.Sc Math CGPA', value: '8.92', hint: 'Malda College' },
+    { label: 'Verified Projects', value: '6+', hint: 'Cloud, Web & Data' },
+    { label: 'Active Stack', value: 'Java / React / AWS', hint: 'Spring Boot + Cloud' },
+  ],
+};

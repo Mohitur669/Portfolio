@@ -1,0 +1,98 @@
+import { SystemNode, SystemPacketFlow } from '../types';
+
+export const SYSTEM_NODES: SystemNode[] = [
+  {
+    id: 'node-client',
+    name: 'Client App Layer',
+    layer: 'client',
+    subtitle: 'React / TypeScript / Tailwind',
+    description: 'High-performance reactive SPA with accessible WCAG 2.2 AA interfaces, optimistic state, and zero layout shift.',
+    projectIds: ['code-editor', 'speakit'],
+    icon: 'Monitor',
+  },
+  {
+    id: 'node-edge',
+    name: 'Edge & CDN Mesh',
+    layer: 'edge',
+    subtitle: 'Cloudflare / AWS CloudFront',
+    description: 'Global anycast edge routing, asset caching, SSL termination, and DDoS mitigation with minimal TTFB.',
+    projectIds: ['speakit'],
+    icon: 'Shield',
+  },
+  {
+    id: 'node-gateway',
+    name: 'API Gateway & Core API',
+    layer: 'gateway',
+    subtitle: 'Java Spring Boot / Node.js',
+    description: 'Enterprise REST gateways, request rate limiting, payload validation, and secure reverse-proxy orchestration.',
+    projectIds: ['code-editor', 'speakit', 'file-hider'],
+    icon: 'Radio',
+  },
+  {
+    id: 'node-compute-ws',
+    name: 'WebSocket Broadcast Service',
+    layer: 'compute',
+    subtitle: 'Socket.io / Node Cluster',
+    description: 'Full-duplex real-time synchronization cluster handling concurrent rooms, user heartbeats, and sub-50ms code delta dissemination.',
+    projectIds: ['code-editor'],
+    icon: 'Zap',
+  },
+  {
+    id: 'node-compute-polly',
+    name: 'Neural Speech Engine (TTS & STT)',
+    layer: 'compute',
+    subtitle: 'Spring Boot / AWS Polly / STT',
+    description: 'Cloud speech synthesis (TTS) & voice transcription (STT) microservice orchestrated via Spring Boot, serving native Swift iOS and React web clients.',
+    projectIds: ['speakit'],
+    icon: 'Volume2',
+  },
+  {
+    id: 'node-compute-analytics',
+    name: 'Python Analytics Engine',
+    layer: 'compute',
+    subtitle: 'Pandas / NumPy / Streamlit',
+    description: 'Statistical compute workers executing in-memory analytical aggregation across 120-year demographic sports records.',
+    projectIds: ['olympic-analysis', 'amazon-scraper'],
+    icon: 'Cpu',
+  },
+  {
+    id: 'node-data',
+    name: 'Data & Persistence Layer',
+    layer: 'data-ai',
+    subtitle: 'PostgreSQL / MongoDB / Tableau BI',
+    description: 'Relational data integrity, schema validation, and public health intelligence visualization cubes.',
+    projectIds: ['covid-tracker', 'amazon-scraper'],
+    icon: 'Database',
+  },
+];
+
+export const SYSTEM_FLOWS: SystemPacketFlow[] = [
+  {
+    id: 'flow-polly',
+    label: 'Neural Speech Processing (SpeakIT TTS & STT)',
+    description: 'Process speech synthesis and transcription via unified Spring Boot backend serving both native iOS (Swift) & Web clients.',
+    nodesTraversed: ['node-client', 'node-edge', 'node-gateway', 'node-compute-polly'],
+    relatedProjectId: 'speakit',
+  },
+  {
+    id: 'flow-ws',
+    label: 'Realtime Code Collaboration (Sync Code)',
+    description: 'Trace a code keystroke delta from Client through Gateway to the WebSocket Broadcast cluster.',
+    nodesTraversed: ['node-client', 'node-edge', 'node-gateway', 'node-compute-ws'],
+    relatedProjectId: 'code-editor',
+  },
+  {
+    id: 'flow-analytics',
+    label: 'Olympic Demographic Query',
+    description: 'Pass user filtration criteria to Python analytical engine and return aggregated statistical charts.',
+    nodesTraversed: ['node-client', 'node-gateway', 'node-compute-analytics', 'node-data'],
+    relatedProjectId: 'olympic-analysis',
+  },
+  {
+    id: 'flow-scraper',
+    label: 'Automated E-Commerce Extraction',
+    description: 'Execute resilient web scraper, normalize structured DOM attributes, and ingest into data store.',
+    nodesTraversed: ['node-compute-analytics', 'node-edge', 'node-data'],
+    relatedProjectId: 'amazon-scraper',
+  },
+];
