@@ -190,3 +190,20 @@
   - Production build (`npm run build`) succeeded with 0 errors.
   - Unit tests (`npm run test`) 100% passed.
   - Desktop Regression Guard (`npm run test:desktop-regression`) 100% passed (0 visual diffs).
+
+
+---
+
+### Security Fix: Resolve Dependabot Alert for `postcss-selector-parser`
+
+- **Root Cause of PR #36 Failure**:
+  - Dependabot attempted to resolve `CVE-2024-51745` (`postcss-selector-parser < 7.1.6`) by upgrading `tailwindcss` from `3.4.19` to `4.3.3`.
+  - Tailwind CSS v4 is a major breaking change: it separates PostCSS into `@tailwindcss/postcss`, deprecates `tailwind.config.js`, and fails builds with `[vite:css] [postcss] It looks like you're trying to use tailwindcss directly as a PostCSS plugin...`.
+- **Solution Applied**:
+  - Added npm `overrides` in `package.json` for `"postcss-selector-parser": "^7.1.7"`.
+  - Directly upgraded the vulnerable transitive dependency from `6.1.5` to `7.1.7` (patched) while keeping the stable Tailwind CSS v3 architecture intact.
+- **Verification**:
+  - `npm audit`: **0 vulnerabilities** (clean).
+  - `npm run build`: **Succeeded** with 0 errors.
+  - `npm run test`: **6/6 passed**.
+  - `npm run test:desktop-regression`: **100% Passed**.
