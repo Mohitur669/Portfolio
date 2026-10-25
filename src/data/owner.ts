@@ -3,7 +3,7 @@ export const OWNER_DATA = {
   shortName: 'Mohitur',
   role: 'Full-Stack & Cloud Engineer',
   focus: 'Distributed Systems, Cloud Architecture & AI Engineering',
-  location: 'Kolkata / Malda, West Bengal, India',
+  location: 'Kolkata, West Bengal, India',
   email: 'mohitur669@gmail.com',
   secondaryEmail: 'mohiturrahman02@gmail.com',
   phone: '+91 XXXXX XXXXX',
