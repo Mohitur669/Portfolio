@@ -80,8 +80,8 @@ export const Projects: React.FC = () => {
           </div>
 
           {/* Category Filter: Compact Dropdown on Mobile (< md), Pill Row on Desktop (>= md) */}
-          <div className="md:hidden relative w-full max-w-full">
-            <div className="relative flex items-center w-full max-w-full">
+          <div className="md:hidden relative w-full max-w-full min-w-0 overflow-hidden box-border">
+            <div className="relative flex items-center w-full max-w-full min-w-0">
               <span className="absolute left-3.5 text-slate-400 pointer-events-none flex items-center">
                 <Filter className="w-3.5 h-3.5" />
               </span>
@@ -89,7 +89,8 @@ export const Projects: React.FC = () => {
                 value={filter}
                 onChange={(e) => setFilter(e.target.value)}
                 aria-label="Filter projects by category"
-                className="w-full max-w-full appearance-none pl-9 pr-9 py-2 rounded-xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 text-xs font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 truncate"
+                className="w-full max-w-full box-border appearance-none pl-9 pr-9 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 text-base sm:text-xs font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 truncate"
+                style={{ boxSizing: 'border-box', maxWidth: '100%' }}
               >
                 <option value="all">All Projects (5)</option>
                 <option value="cloud-backend">Cloud &amp; Backend</option>
@@ -292,8 +293,32 @@ export const Projects: React.FC = () => {
                     className="border-t border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-slate-950/60 p-6 sm:p-8 space-y-6 cursor-default transition-all"
                   >
                     {/* Architectural Navigation Tabs */}
-                    <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-4 gap-4 flex-wrap">
-                      <div className="flex items-center gap-2 overflow-x-auto no-scrollbar max-w-full pb-1">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between border-b border-slate-200 dark:border-white/10 pb-4 gap-3 w-full min-w-0">
+                      {/* Mobile Dropdown View (< md) */}
+                      <div className="md:hidden relative w-full max-w-full min-w-0">
+                        <div className="relative flex items-center w-full max-w-full min-w-0">
+                          <span className="absolute left-3.5 text-slate-400 pointer-events-none flex items-center">
+                            {activeTab === 'pipeline' && <Zap className="w-3.5 h-3.5 text-cyan-500" />}
+                            {activeTab === 'decisions' && <ShieldCheck className="w-3.5 h-3.5 text-cyan-500" />}
+                            {activeTab === 'stack' && <Server className="w-3.5 h-3.5 text-cyan-500" />}
+                          </span>
+                          <select
+                            value={activeTab}
+                            onChange={(e) => setActiveTab(project.id, e.target.value as 'pipeline' | 'decisions' | 'stack')}
+                            aria-label="Select architectural view"
+                            className="w-full max-w-full box-border appearance-none pl-9 pr-9 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 text-base font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 truncate"
+                            style={{ boxSizing: 'border-box', maxWidth: '100%' }}
+                          >
+                            <option value="pipeline">System Flow &amp; Pipeline</option>
+                            <option value="decisions">Engineering Rationale &amp; Trade-offs</option>
+                            <option value="stack">Production Highlights</option>
+                          </select>
+                          <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+                        </div>
+                      </div>
+
+                      {/* Desktop Tabs (>= md) */}
+                      <div className="hidden md:flex items-center gap-2 overflow-x-auto no-scrollbar max-w-full min-w-0 pb-1">
                         <button
                           type="button"
                           onClick={() => setActiveTab(project.id, 'pipeline')}
@@ -304,8 +329,8 @@ export const Projects: React.FC = () => {
                           }`}
                         >
                           <Zap className="w-3.5 h-3.5" />
-                          <span className="sm:hidden">Pipeline Flow</span>
-                          <span className="hidden sm:inline">System Flow &amp; Pipeline</span>
+                          <span className="lg:hidden">Pipeline Flow</span>
+                          <span className="hidden lg:inline">System Flow &amp; Pipeline</span>
                         </button>
 
                         <button
@@ -318,8 +343,8 @@ export const Projects: React.FC = () => {
                           }`}
                         >
                           <ShieldCheck className="w-3.5 h-3.5" />
-                          <span className="sm:hidden">Decisions &amp; Trade-offs</span>
-                          <span className="hidden sm:inline">Engineering Rationale &amp; Trade-offs</span>
+                          <span className="lg:hidden">Decisions &amp; Trade-offs</span>
+                          <span className="hidden lg:inline">Engineering Rationale &amp; Trade-offs</span>
                         </button>
 
                         <button
@@ -337,7 +362,7 @@ export const Projects: React.FC = () => {
                       </div>
 
                       {project.metrics && (
-                        <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg shrink-0">
+                        <div className="text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-lg shrink-0 self-start lg:self-auto">
                           ⚡ {project.metrics}
                         </div>
                       )}

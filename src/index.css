@@ -21,6 +21,12 @@
   :focus-visible {
     @apply outline-none ring-2 ring-cyan-500 ring-offset-2 ring-offset-slate-900;
   }
+
+  /* Universal safety for mobile form controls: prevent overflow and WebKit sizing bugs */
+  select, input, textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
 }
 
 /* Background blueprint grid */

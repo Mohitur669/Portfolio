@@ -95,3 +95,42 @@
       - Contact Error State: **PASS (DIFF 0.0000%)**
       - 404 Route: **PASS (DIFF 0.0000%)**
       - Styleguide Route: **PASS (DIFF 0.0000%)**
+
+
+---
+
+### Phase Mobile Dropdown & Architectural Tabs Overflow Fix: Complete
+
+- **Issue Resolved**:
+  - The project category filter, skills filter, and architectural navigation tabs in expanded project cards were causing right-side overflow on mobile and tablet screens.
+  - On iOS/WebKit devices, `<select>` controls without explicit `box-sizing: border-box` could expand by their horizontal padding beyond 100% width, and font sizes below 16px triggered auto-zoom on focus.
+  - Inside expanded project cards, the architectural navigation tabs ("Pipeline Flow", "Decisions & Trade-offs", "Production Highlights") wrapped alongside the metrics badge in an unconstrained flex row, pushing elements up to 715px across on mobile screens.
+
+- **Changes Applied**:
+  1. `src/components/sections/Projects.tsx`:
+     - Added `box-border`, `min-w-0`, `overflow-hidden`, and explicit inline `boxSizing: 'border-box'` / `maxWidth: '100%'` to the mobile category filter dropdown.
+     - Changed select font size from `text-xs` (12px) to `text-base sm:text-xs` (16px on mobile) to eliminate iOS Safari focus zoom.
+     - Replaced the overflowing mobile tabs row inside expanded project cards with a clean, compact dropdown selector on mobile (`md:hidden`) with matching icons and zero rightward overflow.
+     - Constrained tablet & desktop pills (`hidden md:flex`) with `min-w-0`, responsive label switching (`lg:hidden` / `lg:inline`), and placed the metrics badge on its own line below `lg:` (`self-start lg:self-auto`).
+  2. `src/components/sections/Skills.tsx`:
+     - Added identical `box-border`, `min-w-0`, `overflow-hidden`, and `text-base sm:text-xs` sizing to the tech stack filter dropdown.
+  3. `src/index.css`:
+     - Added global base safety rule: `select, input, textarea { box-sizing: border-box; max-width: 100%; }`.
+
+- **Verification Results**:
+  - Headless Chrome across all mobile viewports (320px, 360px, 375px, 390px, 412px, 430px, 768px):
+    - `docScrollWidth === viewport.width` (0px horizontal overflow).
+    - 0 overflowing DOM elements both before and after project card expansion.
+  - Desktop Regression Guard (`npm run test:desktop-regression`):
+    - 1024px Viewport: **PASS (DIFF 0.0220%)**
+    - 1280px Viewport: **PASS (DIFF 0.0000%)**
+    - 1440px Viewport: **PASS (DIFF 0.0000%)**
+    - 1920px Viewport: **PASS (DIFF 0.0039%)**
+    - 1024px Fullpage: **PASS (DIFF 0.0031%)**
+    - 1280px Fullpage: **PASS (DIFF 0.0072%)**
+    - 1440px Fullpage: **PASS (DIFF 0.0018%)**
+    - Command Palette: **PASS (DIFF 0.0000%)**
+    - Contact Error: **PASS (DIFF 0.0000%)**
+    - 404 Route: **PASS (DIFF 0.0000%)**
+    - Styleguide Route: **PASS (DIFF 0.0043%)**
+    - Overall: **100% PASSED**.

@@ -130,8 +130,8 @@ export const Skills: React.FC = () => {
           </div>
 
           {/* Tech Stack Filter: Compact Dropdown on Mobile (< md), Pill Row on Desktop (>= md) */}
-          <div className="md:hidden relative w-full max-w-full">
-            <div className="relative flex items-center w-full max-w-full">
+          <div className="md:hidden relative w-full max-w-full min-w-0 overflow-hidden box-border">
+            <div className="relative flex items-center w-full max-w-full min-w-0">
               <span className="absolute left-3.5 text-slate-400 pointer-events-none flex items-center">
                 <Filter className="w-3.5 h-3.5" />
               </span>
@@ -139,7 +139,8 @@ export const Skills: React.FC = () => {
                 value={activeCategoryFilter}
                 onChange={(e) => setActiveCategoryFilter(e.target.value)}
                 aria-label="Filter tech stack by category"
-                className="w-full max-w-full appearance-none pl-9 pr-9 py-2 rounded-xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 text-xs font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 truncate"
+                className="w-full max-w-full box-border appearance-none pl-9 pr-9 py-2.5 rounded-xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 text-base sm:text-xs font-mono shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 truncate"
+                style={{ boxSizing: 'border-box', maxWidth: '100%' }}
               >
                 {['all', 'Backend', 'Frontend', 'Cloud', 'Data', 'DevOps'].map((cat) => (
                   <option key={cat} value={cat}>
