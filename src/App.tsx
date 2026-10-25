@@ -105,7 +105,7 @@ export const App: React.FC = () => {
                 height={32}
               />
             </div>
-            <span className="text-slate-900 dark:text-white font-display font-extrabold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors whitespace-nowrap text-sm sm:text-base md:text-lg truncate">
+            <span className="text-slate-900 dark:text-white font-display font-extrabold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors whitespace-nowrap text-[17px] sm:text-lg tracking-tight truncate">
               {OWNER_DATA.name}
             </span>
           </a>

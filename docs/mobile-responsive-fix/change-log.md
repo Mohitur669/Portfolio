@@ -154,3 +154,19 @@
   - Mobile viewports (320px, 360px, 375px, 390px): Name height = 20px (single line confirmed).
   - Theme toggle functionality verified inside mobile hamburger menu.
   - Desktop regression test passed 100% across all viewports and states.
+
+
+---
+
+### Update: Mobile Header Brand Name Font Size Enhancement
+
+- **Changes Applied**:
+  - `src/App.tsx`:
+    - Updated mobile brand name font size to `text-[17px] sm:text-lg`.
+    - At 17px, the full name "Mohd Mohitur Rahaman" is ~21% larger and more prominent while remaining completely on a single line (height = 28px) with 0 line wraps on all mobile devices (360px–430px).
+    - Preserved `truncate` and `whitespace-nowrap` for ultra-narrow screens (320px).
+    - On tablet and desktop (`sm:` / `md:`), smoothly scales to `text-lg` (18px), matching the desktop baseline.
+
+- **Verification**:
+  - Verified across 320px, 360px, 375px, 390px, 412px, 430px: 100% single line confirmed, no truncation above 360px.
+  - Desktop Regression Guard: **100% PASSED** (0 visual diffs).
