@@ -95,7 +95,7 @@ export const App: React.FC = () => {
       {/* Top Navigation */}
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-slate-50/80 dark:bg-obsidian-950/80 border-b border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2.5 group font-display font-extrabold text-lg tracking-tight min-w-0 shrink">
+          <a href="#home" className="flex items-center gap-2.5 group font-display font-extrabold tracking-tight min-w-0 shrink">
             <div className="relative w-8 h-8 rounded-full overflow-hidden border border-slate-300 dark:border-white/20 bg-slate-200 dark:bg-slate-800 shadow-sm transition-transform duration-200 group-hover:scale-105 shrink-0">
               <img
                 src="img/memoji.webp"
@@ -105,7 +105,7 @@ export const App: React.FC = () => {
                 height={32}
               />
             </div>
-            <span className="text-slate-900 dark:text-white font-display font-extrabold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors whitespace-nowrap text-[17px] sm:text-lg tracking-tight truncate">
+            <span className="text-slate-900 dark:text-white font-display font-extrabold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors whitespace-nowrap text-[17px] lg:text-xl xl:text-2xl tracking-tight truncate">
               {OWNER_DATA.name}
             </span>
           </a>

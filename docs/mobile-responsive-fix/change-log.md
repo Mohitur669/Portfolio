@@ -207,3 +207,18 @@
   - `npm run build`: **Succeeded** with 0 errors.
   - `npm run test`: **6/6 passed**.
   - `npm run test:desktop-regression`: **100% Passed**.
+
+
+---
+
+### Update: Desktop Brand Name Font Size Enhancement
+
+- **Changes Applied**:
+  - `src/App.tsx`:
+    - Updated desktop brand font size to `text-[17px] lg:text-xl xl:text-2xl`.
+    - Mobile & Tablet viewports (< 1024px) remain 100% untouched at `text-[17px]`, preserving the exact mobile layout and styling.
+    - On Desktop screens (1024px to 1279px), font size scales to `text-xl` (20px).
+    - On Wide Desktop screens (1280px+), font size scales to `text-2xl` (24px) for high visibility and visual balance.
+- **Verification**:
+  - Tested across 320px, 360px, 375px, 390px, 768px, 1024px, 1280px, 1440px, 1920px.
+  - Production build and unit tests passed with 100% success.
