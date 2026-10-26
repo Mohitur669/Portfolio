@@ -13,7 +13,6 @@ import { CommandPalette } from './components/interactions/CommandPalette';
 import { CustomCursor } from './components/interactions/CustomCursor';
 import { OWNER_DATA } from './data/owner';
 import { useTheme } from './context/ThemeContext';
-import { TypewriterText } from './components/common/TypewriterText';
 import { Sun, Moon, FileDown, Menu, X, Search } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -108,7 +107,7 @@ export const App: React.FC = () => {
               />
             </div>
             <span className="text-ink dark:text-white font-display font-extrabold group-hover:text-accent-teal dark:group-hover:text-accent-teal-bright transition-colors whitespace-nowrap text-lg sm:text-xl lg:text-xl xl:text-2xl tracking-tight">
-              <TypewriterText text={OWNER_DATA.name} />
+              {OWNER_DATA.name}
             </span>
           </a>
 
@@ -125,7 +124,21 @@ export const App: React.FC = () => {
 
           {/* Controls */}
           <div className="flex items-center gap-2">
-            {/* Mobile Command Palette Launcher */}
+            {/* Desktop Command Palette Launcher with ⌘K Badge */}
+            <button
+              onClick={() => setCommandPaletteOpen(true)}
+              title="Search & Quick Actions (⌘K)"
+              aria-label="Search and Quick Actions (Press Command K)"
+              className="hidden md:inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-paper-border dark:border-slate-border bg-paper-subtle/70 dark:bg-slate-surface/70 text-xs font-mono text-slate-600 dark:text-slate-300 hover:border-accent-teal dark:hover:border-teal-400 hover:text-ink dark:hover:text-white transition-colors"
+            >
+              <Search className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
+              <span className="text-[11px] font-sans text-slate-500 dark:text-slate-400">Search</span>
+              <kbd className="inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-mono rounded bg-paper-card dark:bg-slate-canvas border border-paper-border dark:border-slate-border text-slate-600 dark:text-slate-300 shadow-2xs">
+                ⌘K
+              </kbd>
+            </button>
+
+            {/* Mobile Command Palette Launcher: Search Icon Only */}
             <button
               onClick={() => setCommandPaletteOpen(true)}
               title="Search & Quick Actions"

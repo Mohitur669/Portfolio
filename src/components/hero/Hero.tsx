@@ -23,9 +23,6 @@ export const Hero: React.FC = () => {
 
             {/* Headline */}
             <div className="space-y-3">
-              <p className="text-xs font-mono uppercase tracking-widest text-accent-amber dark:text-amber-300 font-semibold">
-                Mohd Mohitur Rahaman • Kolkata, India
-              </p>
               <h1 className="text-3xl sm:text-5xl lg:text-[3.5rem] font-serif font-normal tracking-tight text-ink dark:text-white leading-[1.15]">
                Engineering Distributed Backend & Cloud Systems with mathematical roots.
               </h1>
@@ -143,7 +140,14 @@ export const Hero: React.FC = () => {
                   </picture>
                 </div>
 
-                <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 dark:bg-[#101b30] border border-slate-200/80 dark:border-[#1e3050] text-xs font-mono shadow-xs">
+                {/* Identity Name inside Profile Card */}
+                <div className="mt-4 text-center">
+                  <h2 className="text-xl sm:text-2xl font-serif font-medium text-ink dark:text-white tracking-tight">
+                    {OWNER_DATA.name}
+                  </h2>
+                </div>
+
+                <div className="mt-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 dark:bg-[#101b30] border border-slate-200/80 dark:border-[#1e3050] text-xs font-mono shadow-xs">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="font-semibold text-ink dark:text-white">Backend &amp; Cloud Systems</span>
                   <span className="text-slate-400">•</span>
