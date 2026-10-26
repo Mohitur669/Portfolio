@@ -148,8 +148,8 @@ export const Skills: React.FC = () => {
               key={cat.name}
               className="p-5 sm:p-6 rounded-xl border border-paper-border dark:border-slate-border bg-paper-card dark:bg-slate-surface flex flex-col h-full shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
             >
-              {/* Header block with uniform fixed height so tags start at the exact same height across all cards */}
-              <div className="space-y-1.5 h-auto md:h-[86px] flex flex-col justify-start shrink-0">
+              {/* Header block */}
+              <div className="space-y-1.5 mb-4">
                 <div className="flex items-center justify-between">
                   <h3 className="font-serif font-medium text-lg text-ink dark:text-white">
                     {cat.name}
@@ -163,8 +163,8 @@ export const Skills: React.FC = () => {
                 </p>
               </div>
 
-              {/* Items container: Starts at identical vertical height across all cards in each row */}
-              <div className="flex flex-wrap gap-2 pt-3 border-t border-paper-border/60 dark:border-slate-border/60">
+              {/* Items container: Aligned to the bottom of the card */}
+              <div className="flex flex-wrap gap-2 pt-3 border-t border-paper-border/60 dark:border-slate-border/60 mt-auto">
                 {cat.items.map((skill) => {
                   const isSelected = selectedSkill?.name === skill.name;
                   const iconUrl = TECH_ICON_MAP[skill.name] || '/img/tech/aws.svg';
