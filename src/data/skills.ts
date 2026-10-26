@@ -43,6 +43,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     items: [
       { name: 'RESTful APIs', level: 'Core', iconName: 'Globe', usedIn: ['speakit', 'code-editor', 'HTTP Contracts'] },
       { name: 'Swagger/OpenAPI', level: 'Core', iconName: 'FileText', usedIn: ['Contract Specifications', 'API Testing', 'Interactive Docs'] },
+      { name: 'WebSockets', level: 'Core', iconName: 'Zap', usedIn: ['Sync Code', 'Full-Duplex Comms', 'Sub-50ms Sync', 'Real-time Events'] },
+      { name: 'JWT / OAuth2', level: 'Core', iconName: 'Shield', usedIn: ['Stateless Auth', 'Spring Security', 'Token Verification', 'Role-Based Access'] },
     ],
   },
   {
@@ -62,6 +64,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     items: [
       { name: 'Postman', level: 'Core', iconName: 'Send', usedIn: ['API Testing', 'Collection Runs', 'Environment Assertion'] },
       { name: 'Tailwind CSS', level: 'Core', iconName: 'Palette', usedIn: ['Portfolio', 'Design Tokens', 'Accessibility Standards'] },
+      { name: 'JUnit 5 & Mockito', level: 'Core', iconName: 'CheckCircle', usedIn: ['Unit Testing', 'Spring Boot Tests', 'Mocking', 'Assertion Verification'] },
+      { name: 'Linux / Bash', level: 'Core', iconName: 'Terminal', usedIn: ['EC2 Shell', 'Server Administration', 'Automation Scripts', 'System Ops'] },
+      { name: 'Agile / Scrum', level: 'Core', iconName: 'RefreshCw', usedIn: ['Sprint Cycles', 'Iterative Delivery', 'Cross-Functional Teamwork'] },
     ],
   },
 ];

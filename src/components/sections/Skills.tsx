@@ -36,9 +36,12 @@ export const TECH_ICON_MAP: Record<string, string> = {
   // APIs / Web
   'RESTful APIs': '/img/tech/rest-api.svg',
   'Swagger/OpenAPI': '/img/tech/swagger.svg',
+  'WebSockets': '/img/tech/websocket.svg',
+  'JWT / OAuth2': '/img/tech/jwt.svg',
 
   // AI / GenAI
   'AWS Bedrock': '/img/tech/bedrock.svg',
+  'AWS Polly': '/img/tech/aws-polly.svg',
   'LLM API Integration': '/img/tech/llm.svg',
   'ElevenLabs': '/img/tech/elevenlabs.svg',
   'Sarvam AI': '/img/tech/sarvam.svg',
@@ -46,6 +49,9 @@ export const TECH_ICON_MAP: Record<string, string> = {
   // Tools / Practices
   'Postman': '/img/tech/postman.svg',
   'Tailwind CSS': '/img/tech/tailwind.svg',
+  'JUnit 5 & Mockito': '/img/tech/junit.svg',
+  'Linux / Bash': '/img/tech/linux.svg',
+  'Agile / Scrum': '/img/tech/agile.svg',
 };
 
 export interface SelectedSkillContext {
