@@ -7,7 +7,7 @@ export const OWNER_DATA = {
   email: 'mohitur669@gmail.com',
   secondaryEmail: 'mohiturrahman02@gmail.com',
   phone: '+91 XXXXX XXXXX',
-  altPhone: '+91 86170 27551',
+  altPhone: '+91 XXXXX XXXXX',
   availability: 'Open for engineering roles in backend and cloud systems',
   website: 'https://mohitur.com/',
   bio: 'Software engineer based in Kolkata with a pure mathematics background. Three years of proof-based analysis and linear algebra shaped how I approach systems: clear invariants, deterministic state transitions, and minimal moving parts. I build backend services with Java / Spring Boot and Node.js, manage cloud infrastructure on AWS, and write client applications with TypeScript and Swift.',

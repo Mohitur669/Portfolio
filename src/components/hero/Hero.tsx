@@ -142,8 +142,8 @@ export const Hero: React.FC = () => {
 
                 {/* Identity Name inside Profile Card */}
                 <div className="mt-4 text-center">
-                  <h2 className="text-xl sm:text-2xl font-serif font-medium text-ink dark:text-white tracking-tight">
-                    {OWNER_DATA.name}
+                  <h2 className="text-2xl sm:text-2xl font-serif font-medium text-ink dark:text-white tracking-tight">
+                    myself, {OWNER_DATA.name}
                   </h2>
                 </div>
 
