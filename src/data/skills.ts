@@ -45,6 +45,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: 'Swagger/OpenAPI', level: 'Core', iconName: 'FileText', usedIn: ['Contract Specifications', 'API Testing', 'Interactive Docs'] },
       { name: 'WebSockets', level: 'Core', iconName: 'Zap', usedIn: ['Sync Code', 'Full-Duplex Comms', 'Sub-50ms Sync', 'Real-time Events'] },
       { name: 'JWT / OAuth2', level: 'Core', iconName: 'Shield', usedIn: ['Stateless Auth', 'Spring Security', 'Token Verification', 'Role-Based Access'] },
+      { name: 'cURL / HTTP Client', level: 'Core', iconName: 'Terminal', usedIn: ['Endpoint Assertion', 'Raw HTTP Protocols', 'API Debugging', 'Network Probes'] },
     ],
   },
   {

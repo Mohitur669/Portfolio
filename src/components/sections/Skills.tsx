@@ -38,6 +38,8 @@ export const TECH_ICON_MAP: Record<string, string> = {
   'Swagger/OpenAPI': '/img/tech/swagger.svg',
   'WebSockets': '/img/tech/websocket.svg',
   'JWT / OAuth2': '/img/tech/jwt.svg',
+  'cURL / HTTP Client': '/img/tech/curl.svg',
+  'cURL': '/img/tech/curl.svg',
 
   // AI / GenAI
   'AWS Bedrock': '/img/tech/bedrock.svg',
