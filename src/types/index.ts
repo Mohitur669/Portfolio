@@ -68,7 +68,10 @@ export interface SystemNode {
 export interface SystemPacketFlow {
   id: string;
   label: string;
+  shortName?: string;
+  systemName?: string;
   description: string;
+  tradeoff?: string;
   nodesTraversed: string[];
   relatedProjectId: string;
 }

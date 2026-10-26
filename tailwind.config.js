@@ -5,35 +5,42 @@ export default {
   theme: {
     extend: {
       colors: {
-        blueprint: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-          950: '#042f2e',
+        paper: {
+          canvas: 'var(--color-paper-canvas, #faf8f5)',
+          card: 'var(--color-paper-card, #ffffff)',
+          border: 'var(--color-paper-border, #e5e0d8)',
+          subtle: 'var(--color-paper-subtle, #f2eee8)',
+        },
+        ink: {
+          DEFAULT: 'var(--color-ink-primary, #18181b)',
+          graphite: 'var(--color-ink-graphite, #3f3f46)',
+          muted: 'var(--color-ink-muted, #52525b)',
+        },
+        slate: {
+          canvas: '#0d1117',   // Deep, rich dark canvas
+          surface: '#161b22',  // Card and elevated surface
+          card: '#161b22',
+          subtle: '#21262d',   // Secondary elevated element
+          border: '#30363d',   // Clear, visible dark border
+          muted: '#8b949e',    // Secondary metadata
         },
         obsidian: {
-          900: '#0b1120',
-          950: '#060a12',
+          950: '#0d1117',
+          900: '#161b22',
+          800: '#21262d',
+          700: '#30363d',
+        },
+        accent: {
+          teal: '#0f766e',
+          'teal-bright': '#2dd4bf',
+          amber: '#b45309',
+          'amber-bright': '#f59e0b',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
-      },
-      boxShadow: {
-        glow: '0 0 40px -10px rgba(6, 182, 212, 0.25)',
-        'glow-emerald': '0 0 40px -10px rgba(16, 185, 129, 0.25)',
-      },
-      animation: {
-        'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        serif: ['Newsreader', 'Georgia', 'serif'],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
     },
   },

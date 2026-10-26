@@ -10,8 +10,8 @@ export const EXPERIENCES: ExperienceItem[] = [
     type: 'education',
     scoreOrResult: 'CGPA: 9.04 / 10',
     highlights: [
-      'Advanced coursework in Distributed Systems, Data Structures & Algorithms, Cloud Computing, and Database Internals.',
-      'Designed and deployed full-stack cloud projects including Sync Code (WebSockets) and SpeakIT (AWS Polly).',
+      'Advanced coursework in Distributed Systems, Data Structures & Algorithms, Cloud Computing, and Database Management.',
+      'Built and deployed full-stack cloud projects including Sync Code (WebSockets) and SpeakIT (AWS Polly + Spring Boot).',
       'Secured 3rd Position in the Interdepartmental Technical Debate Competition.',
     ],
     technologies: ['Java', 'Spring Boot', 'React', 'AWS', 'Docker', 'SQL', 'Algorithms'],
@@ -25,10 +25,10 @@ export const EXPERIENCES: ExperienceItem[] = [
     type: 'education',
     scoreOrResult: 'CGPA: 8.92 / 10',
     highlights: [
-      'Rigorous mathematical training in Linear Algebra, Real Analysis, Discrete Mathematics, Probability & Statistics.',
-      'Formed the foundational logical reasoning and algorithmic formulation underlying modern data science and AI.',
+      'Proof-based curriculum in Linear Algebra, Real Analysis, Discrete Mathematics, Probability & Abstract Algebra.',
+      'Formed the foundational logical reasoning and invariant analysis that informs how I design and debug software.',
     ],
-    technologies: ['Pure Mathematics', 'Linear Algebra', 'Calculus', 'Probability', 'Python'],
+    technologies: ['Pure Mathematics', 'Linear Algebra', 'Real Analysis', 'Probability', 'Python'],
   },
   {
     id: 'malda-hs',
@@ -48,14 +48,14 @@ export const EXPERIENCES: ExperienceItem[] = [
     location: 'Malda, West Bengal, India',
     type: 'education',
     scoreOrResult: 'Score: 86.57%',
-    highlights: ['Academic excellence and character development in premier historical institution.'],
+    highlights: ['Secondary education with focus on science and mathematics.'],
   },
 ];
 
 export const CERTIFICATIONS = [
   {
-    name: 'Google Data Analytics Specialization',
+    name: 'Google Data Analytics Professional Certificate',
     issuer: 'Google Career Certificates',
-    skills: ['Data Analysis', 'SQL', 'R / Python', 'Tableau', 'Data Storytelling'],
+    skills: ['Data Analysis', 'SQL', 'R / Python', 'Spreadsheets', 'Data Modeling'],
   },
 ];

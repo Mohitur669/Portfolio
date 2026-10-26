@@ -3,8 +3,9 @@ import { Styleguide } from './pages/Styleguide';
 import { NotFound } from './pages/NotFound';
 import { Hero } from './components/hero/Hero';
 import { About } from './components/sections/About';
-import { Projects } from './components/sections/Projects';
+import { SystemTopology } from './components/hero/SystemTopology';
 import { Skills } from './components/sections/Skills';
+import { Projects } from './components/sections/Projects';
 import { ExperienceTimeline } from './components/sections/ExperienceTimeline';
 import { Contact } from './components/sections/Contact';
 import { Footer } from './components/sections/Footer';
@@ -12,6 +13,7 @@ import { CommandPalette } from './components/interactions/CommandPalette';
 import { CustomCursor } from './components/interactions/CustomCursor';
 import { OWNER_DATA } from './data/owner';
 import { useTheme } from './context/ThemeContext';
+import { TypewriterText } from './components/common/TypewriterText';
 import { Sun, Moon, FileDown, Menu, X, Search } from 'lucide-react';
 
 export const App: React.FC = () => {
@@ -71,11 +73,11 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="relative min-h-screen bg-slate-50 dark:bg-obsidian-950 text-slate-900 dark:text-slate-100 selection:bg-cyan-500 selection:text-white transition-colors duration-200">
+    <div className="relative min-h-screen bg-paper-canvas dark:bg-slate-canvas text-ink dark:text-slate-100 selection:bg-accent-teal selection:text-white dark:selection:bg-accent-teal-bright dark:selection:text-slate-900 transition-colors duration-150">
       {/* Accessible Skip Link */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded-xl focus:shadow-lg focus:outline-none"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent-teal focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none"
       >
         Skip to main content
       </a>
@@ -89,14 +91,14 @@ export const App: React.FC = () => {
         onClose={() => setCommandPaletteOpen(false)}
       />
 
-      {/* Background blueprint grid */}
-      <div className="fixed inset-0 bg-grid-blueprint pointer-events-none z-0 opacity-60 dark:opacity-30" />
+      {/* Subtle architectural grid */}
+      <div className="fixed inset-0 bg-journal-grid pointer-events-none z-0 opacity-70 dark:opacity-40" />
 
       {/* Top Navigation */}
-      <header className="sticky top-0 z-40 backdrop-blur-xl bg-slate-50/80 dark:bg-obsidian-950/80 border-b border-slate-200 dark:border-white/10 transition-colors">
+      <header className="sticky top-0 z-40 backdrop-blur-xl bg-paper-canvas/90 dark:bg-slate-canvas/90 border-b border-paper-border dark:border-slate-border transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2.5 group font-display font-extrabold tracking-tight min-w-0 shrink">
-            <div className="relative w-8 h-8 rounded-full overflow-hidden border border-slate-300 dark:border-white/20 bg-slate-200 dark:bg-slate-800 shadow-sm transition-transform duration-200 group-hover:scale-105 shrink-0">
+            <div className="relative w-8 h-8 rounded-full overflow-hidden border border-paper-border dark:border-slate-border bg-paper-subtle dark:bg-slate-subtle shadow-sm transition-transform duration-200 group-hover:scale-105 shrink-0">
               <img
                 src="img/memoji.webp"
                 alt="Mohd Mohitur Rahaman Avatar"
@@ -105,57 +107,64 @@ export const App: React.FC = () => {
                 height={32}
               />
             </div>
-            <span className="text-slate-900 dark:text-white font-display font-extrabold group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors whitespace-nowrap text-[17px] lg:text-xl xl:text-2xl tracking-tight truncate">
-              {OWNER_DATA.name}
+            <span className="text-ink dark:text-white font-display font-extrabold group-hover:text-accent-teal dark:group-hover:text-accent-teal-bright transition-colors whitespace-nowrap text-lg sm:text-xl lg:text-xl xl:text-2xl tracking-tight">
+              <TypewriterText text={OWNER_DATA.name} />
             </span>
           </a>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-            <a href="#home" className="hover:text-cyan-500 transition-colors">Home</a>
-            <a href="#about" className="hover:text-cyan-500 transition-colors">About</a>
-            <a href="#skills" className="hover:text-cyan-500 transition-colors">Skills</a>
-            <a href="#projects" className="hover:text-cyan-500 transition-colors">Projects</a>
-            <a href="#experience" className="hover:text-cyan-500 transition-colors">Journey</a>
-            <a href="#contact" className="hover:text-cyan-500 transition-colors">Contact</a>
+          {/* Desktop Nav: Home -> About -> Architecture -> Skills -> Projects -> Journey -> Contact */}
+          <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-slate-700 dark:text-slate-200">
+            <a href="#home" className="hover:text-accent-teal dark:hover:text-teal-300 transition-colors">Home</a>
+            <a href="#about" className="hover:text-accent-teal dark:hover:text-teal-300 transition-colors">About</a>
+            <a href="#architecture" className="hover:text-accent-teal dark:hover:text-teal-300 transition-colors">Architecture</a>
+            <a href="#skills" className="hover:text-accent-teal dark:hover:text-teal-300 transition-colors">Skills</a>
+            <a href="#projects" className="hover:text-accent-teal dark:hover:text-teal-300 transition-colors">Projects</a>
+            <a href="#experience" className="hover:text-accent-teal dark:hover:text-teal-300 transition-colors">Journey</a>
+            <a href="#contact" className="hover:text-accent-teal dark:hover:text-teal-300 transition-colors">Contact</a>
           </nav>
 
           {/* Controls */}
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center gap-2">
             {/* Mobile Command Palette Launcher */}
             <button
               onClick={() => setCommandPaletteOpen(true)}
               title="Search & Quick Actions"
               aria-label="Open Command Palette"
-              className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:border-cyan-500 transition-colors"
+              className="md:hidden p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg border border-paper-border dark:border-slate-border text-slate-700 dark:text-slate-200 hover:border-accent-teal dark:hover:border-teal-400 transition-colors"
             >
               <Search className="w-4 h-4" />
             </button>
 
+            {/* Minimal Theme Toggle */}
             <button
               onClick={toggleTheme}
-              title="Toggle color theme"
+              title={resolvedTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
               aria-label="Toggle theme"
-              className="hidden md:flex p-2 items-center justify-center rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300 hover:border-cyan-500 transition-colors"
+              className="hidden md:inline-flex p-2 items-center justify-center rounded-md text-slate-500 dark:text-slate-400 hover:text-ink dark:hover:text-white hover:bg-paper-card dark:hover:bg-slate-surface transition-colors"
             >
-              {resolvedTheme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-500" />}
+              {resolvedTheme === 'dark' ? (
+                <Sun className="w-4 h-4 text-amber-300" />
+              ) : (
+                <Moon className="w-4 h-4 text-slate-700" />
+              )}
             </button>
 
+            {/* Minimal Resume Link: Black text, white bg, non-bold */}
             <a
               href={OWNER_DATA.resumePath}
               target="_blank"
               rel="noopener noreferrer"
               download="Mohd_Mohitur_Rahaman_Resume.pdf"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold shadow-glow transition-all"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white text-black border border-slate-200 dark:border-white shadow-xs text-xs font-mono font-normal hover:bg-slate-100 transition-colors"
             >
-              <FileDown className="w-3.5 h-3.5" />
+              <FileDown className="w-3.5 h-3.5 text-black" />
               <span>Resume</span>
             </a>
 
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl border border-slate-300 dark:border-white/10 text-slate-600 dark:text-slate-300"
+              className="md:hidden p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg border border-paper-border dark:border-slate-border text-slate-700 dark:text-slate-200"
               aria-label="Toggle mobile menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -163,48 +172,55 @@ export const App: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Nav Dropdown */}
+        {/* Mobile Nav Dropdown: Home -> About -> Architecture -> Skills -> Projects -> Journey -> Contact */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-b border-slate-200 dark:border-white/10 bg-slate-50/98 dark:bg-obsidian-950/98 backdrop-blur-2xl px-4 py-4 space-y-2 text-sm font-mono shadow-2xl max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain">
+          <div className="md:hidden border-b border-paper-border dark:border-slate-border bg-paper-canvas/98 dark:bg-slate-canvas/98 backdrop-blur-2xl px-4 py-4 space-y-2 text-sm font-mono shadow-2xl max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain">
             <a
               href="#home"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
+              className="flex items-center min-h-[44px] px-3 rounded-lg text-slate-800 dark:text-slate-100 hover:bg-paper-subtle dark:hover:bg-slate-surface active:bg-accent-teal/10 font-medium"
             >
               Home
             </a>
             <a
               href="#about"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
+              className="flex items-center min-h-[44px] px-3 rounded-lg text-slate-800 dark:text-slate-100 hover:bg-paper-subtle dark:hover:bg-slate-surface active:bg-accent-teal/10 font-medium"
             >
               About
             </a>
             <a
+              href="#architecture"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center min-h-[44px] px-3 rounded-lg text-slate-800 dark:text-slate-100 hover:bg-paper-subtle dark:hover:bg-slate-surface active:bg-accent-teal/10 font-medium"
+            >
+              Architecture
+            </a>
+            <a
               href="#skills"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
+              className="flex items-center min-h-[44px] px-3 rounded-lg text-slate-800 dark:text-slate-100 hover:bg-paper-subtle dark:hover:bg-slate-surface active:bg-accent-teal/10 font-medium"
             >
               Skills
             </a>
             <a
               href="#projects"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
+              className="flex items-center min-h-[44px] px-3 rounded-lg text-slate-800 dark:text-slate-100 hover:bg-paper-subtle dark:hover:bg-slate-surface active:bg-accent-teal/10 font-medium"
             >
               Projects
             </a>
             <a
               href="#experience"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
+              className="flex items-center min-h-[44px] px-3 rounded-lg text-slate-800 dark:text-slate-100 hover:bg-paper-subtle dark:hover:bg-slate-surface active:bg-accent-teal/10 font-medium"
             >
               Journey
             </a>
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium"
+              className="flex items-center min-h-[44px] px-3 rounded-lg text-slate-800 dark:text-slate-100 hover:bg-paper-subtle dark:hover:bg-slate-surface active:bg-accent-teal/10 font-medium"
             >
               Contact
             </a>
@@ -213,54 +229,57 @@ export const App: React.FC = () => {
             <button
               type="button"
               onClick={toggleTheme}
-              className="w-full flex items-center justify-between min-h-[44px] px-3 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-white/5 active:bg-cyan-500/10 font-medium transition-colors"
+              className="w-full flex items-center justify-between min-h-[44px] px-3 rounded-lg text-slate-800 dark:text-slate-100 hover:bg-paper-subtle dark:hover:bg-slate-surface active:bg-accent-teal/10 font-medium transition-colors"
             >
               <span className="flex items-center gap-2.5">
                 {resolvedTheme === 'dark' ? (
-                  <Sun className="w-4 h-4 text-amber-400" />
+                  <Sun className="w-4 h-4 text-amber-300" />
                 ) : (
-                  <Moon className="w-4 h-4 text-indigo-500" />
+                  <Moon className="w-4 h-4 text-slate-700" />
                 )}
                 <span>Theme</span>
               </span>
-              <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+              <span className="text-xs text-slate-600 dark:text-slate-300 font-mono">
                 {resolvedTheme === 'dark' ? 'Dark' : 'Light'}
               </span>
             </button>
-            <div className="pt-2 border-t border-slate-200 dark:border-white/10">
+            <div className="pt-2 border-t border-paper-border dark:border-slate-border">
               <a
                 href={OWNER_DATA.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Mohd_Mohitur_Rahaman_Resume.pdf"
-                className="flex items-center justify-center gap-2 min-h-[44px] px-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-semibold shadow-glow"
+                className="flex items-center justify-center gap-2 min-h-[44px] px-4 rounded-lg bg-white text-black border border-slate-200 shadow-sm text-xs font-mono font-normal hover:bg-slate-100 transition-colors"
               >
-                <FileDown className="w-4 h-4" />
-                <span>Download Resume (PDF)</span>
+                <FileDown className="w-4 h-4 text-black" />
+                <span>Download Resume</span>
               </a>
             </div>
           </div>
         )}
       </header>
 
-      {/* Main Content Landmark: Intro -> About -> Skills -> Projects -> Journey -> Contact */}
+      {/* Main Content Landmark: Intro -> About ("From Proof-Based Mathematics...") -> Architecture -> Skills -> Projects -> Journey -> Contact */}
       <main id="main-content">
         {/* 1. Intro / Hero */}
         <Hero />
 
-        {/* 2. About Me */}
+        {/* 2. About Me ("From Proof-Based Mathematics to Backend Systems") */}
         <About />
 
-        {/* 3. Tech Stack Icons & Capabilities */}
+        {/* 3. System Architecture / How Systems Work (Placed directly after About) */}
+        <SystemTopology />
+
+        {/* 4. Tech Stack Icons & Capabilities */}
         <Skills />
 
-        {/* 4. Verified Projects */}
+        {/* 5. Verified Projects */}
         <Projects />
 
-        {/* 5. Journey & Milestones */}
+        {/* 6. Journey & Milestones */}
         <ExperienceTimeline />
 
-        {/* 6. Contact */}
+        {/* 7. Contact */}
         <Contact />
       </main>
 

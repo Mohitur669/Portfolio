@@ -8,8 +8,11 @@ describe('Data Layer & Verification Integrity', () => {
   it('contains authentic owner identity without fabricated data', () => {
     expect(OWNER_DATA.name).toBe('Mohd Mohitur Rahaman');
     expect(OWNER_DATA.email).toBe('mohitur669@gmail.com');
+    expect(OWNER_DATA.website).toBe('https://mohitur.com/');
     expect(OWNER_DATA.socials.github).toBe('https://github.com/Mohitur669');
-    expect(OWNER_DATA.socials.linkedin).toBe('https://linkedin.com/in/mohitur02');
+    expect(OWNER_DATA.socials.linkedin).toBe('https://www.linkedin.com/in/mohitur02/');
+    expect(OWNER_DATA.socials.twitter).toBe('https://x.com/mohitur02');
+    expect(OWNER_DATA.socials.instagram).toBe('https://www.instagram.com/mohitur02/');
     expect(OWNER_DATA.resumePath).toBe('https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf');
   });
 
@@ -31,7 +34,7 @@ describe('Data Layer & Verification Integrity', () => {
   });
 
   it('verifies skill taxonomy has valid mappings to projects or domains', () => {
-    expect(SKILL_CATEGORIES.length).toBe(4);
+    expect(SKILL_CATEGORIES.length).toBe(6);
     SKILL_CATEGORIES.forEach((cat) => {
       expect(cat.items.length).toBeGreaterThan(0);
       cat.items.forEach((item) => {

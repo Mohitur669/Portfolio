@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mohitur669.github.io/Portfolio/sitemap.xml
+Sitemap: https://mohitur.com/sitemap.xml
