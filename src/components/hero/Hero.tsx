@@ -144,7 +144,8 @@ export const Hero: React.FC = () => {
                 {/* Identity Name inside Profile Card with Typewriter Effect */}
                 <div className="mt-4 text-center">
                   <h2 className="text-2xl sm:text-2xl font-serif font-medium text-ink dark:text-white tracking-tight">
-                    <TypewriterText text={`myself, ${OWNER_DATA.name}`} />
+                    <span>myself, </span>
+                    <TypewriterText text={OWNER_DATA.name} />
                   </h2>
                 </div>
 
