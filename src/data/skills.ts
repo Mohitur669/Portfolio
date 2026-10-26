@@ -26,18 +26,11 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     name: 'Cloud / DevOps',
     description: 'Cloud infrastructure, containerization, build lifecycles, and deployment automation.',
     items: [
-      {
-        name: 'AWS (EC2, S3, Lambda, IAM, SNS)',
-        level: 'Core',
-        iconName: 'Server',
-        usedIn: [
-          'EC2 Compute',
-          'S3 Storage Buffers',
-          'Lambda Functions',
-          'IAM Security Policies',
-          'SNS Topics',
-        ],
-      },
+      { name: 'AWS EC2', level: 'Core', iconName: 'Server', usedIn: ['Compute Instances', 'Production Deployment', 'Linux Host'] },
+      { name: 'AWS S3', level: 'Core', iconName: 'Database', usedIn: ['speakit', 'Audio Storage', 'Presigned URLs', 'Static Assets'] },
+      { name: 'AWS Lambda', level: 'Core', iconName: 'Zap', usedIn: ['Serverless Functions', 'Event Triggers', 'Microservices'] },
+      { name: 'AWS IAM', level: 'Core', iconName: 'Shield', usedIn: ['Access Policies', 'Role Delegation', 'Least Privilege'] },
+      { name: 'AWS SNS', level: 'Core', iconName: 'Bell', usedIn: ['Pub/Sub Messaging', 'Event Fan-Out', 'Notification Topics'] },
       { name: 'Docker', level: 'Core', iconName: 'Box', usedIn: ['Containerization', 'Local Dev', 'Service Isolation'] },
       { name: 'Git', level: 'Core', iconName: 'GitBranch', usedIn: ['All Projects', 'Version Control', 'Semantic Releases'] },
       { name: 'CI/CD', level: 'Core', iconName: 'RefreshCw', usedIn: ['Automated Builds', 'Test Verification', 'Continuous Delivery'] },
