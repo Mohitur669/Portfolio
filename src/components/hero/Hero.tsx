@@ -1,5 +1,6 @@
 import React from 'react';
 import { OWNER_DATA } from '../../data/owner';
+import { TypewriterText } from '../common/TypewriterText';
 import { ArrowDown, FileDown, Mail, Github, Linkedin } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -140,10 +141,10 @@ export const Hero: React.FC = () => {
                   </picture>
                 </div>
 
-                {/* Identity Name inside Profile Card */}
+                {/* Identity Name inside Profile Card with Typewriter Effect */}
                 <div className="mt-4 text-center">
                   <h2 className="text-2xl sm:text-2xl font-serif font-medium text-ink dark:text-white tracking-tight">
-                    myself, {OWNER_DATA.name}
+                    <TypewriterText text={`myself, ${OWNER_DATA.name}`} />
                   </h2>
                 </div>
 
