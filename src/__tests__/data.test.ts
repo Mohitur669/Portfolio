@@ -13,7 +13,8 @@ describe('Data Layer & Verification Integrity', () => {
     expect(OWNER_DATA.socials.linkedin).toBe('https://www.linkedin.com/in/mohitur02/');
     expect(OWNER_DATA.socials.twitter).toBe('https://x.com/mohitur02');
     expect(OWNER_DATA.socials.instagram).toBe('https://www.instagram.com/mohitur02/');
-    expect(OWNER_DATA.resumePath).toBe('https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf');
+    expect(OWNER_DATA.resumePath).toBe('/resume.pdf');
+    expect(OWNER_DATA.resumeCdnUrl).toBe('https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf');
   });
 
   it('contains verified real projects with valid links and architectures', () => {
