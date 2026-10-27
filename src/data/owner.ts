@@ -18,8 +18,7 @@ export const OWNER_DATA = {
     instagram: 'https://www.instagram.com/mohitur02/',
     blog: 'https://blogs.mohitur.com/',
   },
-  resumePath: '/resume.pdf',
-  resumeCdnUrl: 'https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf',
+  resumePath: 'https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf',
   stats: [
     { label: 'MCA (Computer Applications)', value: '9.04 CGPA', hint: 'KIIT Bhubaneswar (2022–2024)' },
     { label: 'B.Sc. Mathematics (Honours)', value: '8.92 CGPA', hint: 'Malda College (2019–2022)' },
