@@ -124,18 +124,17 @@ export const App: React.FC = () => {
 
           {/* Controls */}
           <div className="flex items-center gap-2">
-            {/* Desktop Command Palette Launcher with ⌘K Badge */}
+            {/* Desktop Command Palette Launcher: Search Icon with Cmd+K (no internal badge border) */}
             <button
               onClick={() => setCommandPaletteOpen(true)}
-              title="Search & Quick Actions (⌘K)"
+              title="Search & Quick Actions (Cmd+K)"
               aria-label="Search and Quick Actions (Press Command K)"
               className="hidden md:inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg border border-paper-border dark:border-slate-border bg-paper-subtle/70 dark:bg-slate-surface/70 text-xs font-mono text-slate-600 dark:text-slate-300 hover:border-accent-teal dark:hover:border-teal-400 hover:text-ink dark:hover:text-white transition-colors"
             >
               <Search className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />
-              <span className="text-[11px] font-sans text-slate-500 dark:text-slate-400">Search</span>
-              <kbd className="inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[10px] font-mono rounded bg-paper-card dark:bg-slate-canvas border border-paper-border dark:border-slate-border text-slate-600 dark:text-slate-300 shadow-2xs">
-                ⌘K
-              </kbd>
+              <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+                Cmd+K
+              </span>
             </button>
 
             {/* Mobile Command Palette Launcher: Search Icon Only */}
@@ -148,12 +147,12 @@ export const App: React.FC = () => {
               <Search className="w-4 h-4" />
             </button>
 
-            {/* Minimal Theme Toggle */}
+            {/* Theme Toggle: Bordered matching blogs.mohitur.com */}
             <button
               onClick={toggleTheme}
               title={resolvedTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
               aria-label="Toggle theme"
-              className="hidden md:inline-flex p-2 items-center justify-center rounded-md text-slate-500 dark:text-slate-400 hover:text-ink dark:hover:text-white hover:bg-paper-card dark:hover:bg-slate-surface transition-colors"
+              className="hidden md:inline-flex p-2 min-w-[36px] min-h-[36px] items-center justify-center rounded-lg border border-paper-border dark:border-slate-border text-slate-700 dark:text-slate-200 hover:border-accent-teal dark:hover:border-teal-400 hover:bg-paper-subtle dark:hover:bg-slate-subtle hover:text-ink dark:hover:text-white transition-colors focus-visible:outline-2"
             >
               {resolvedTheme === 'dark' ? (
                 <Sun className="w-4 h-4 text-amber-300" />
