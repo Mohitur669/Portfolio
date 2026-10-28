@@ -116,7 +116,7 @@ export const About: React.FC = () => {
                 rel="noopener noreferrer"
                 className="min-h-[44px] inline-flex items-center gap-1.5 text-xs font-mono text-accent-teal dark:text-teal-300 hover:underline font-medium"
               >
-                <span>Read engineering notes &amp; technical essays on Blogspot</span>
+                <span>Read engineering notes &amp; technical essays on here</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             </div>

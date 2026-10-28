@@ -30,7 +30,7 @@
     - `https://www.linkedin.com/in/mohitur02/`
     - `https://x.com/mohitur02`
     - `https://www.instagram.com/mohitur02/`
-    - `https://rahamanmohitur.blogspot.com/`
+    - `https://blogs.mohitur.com/`
 
 ---
 

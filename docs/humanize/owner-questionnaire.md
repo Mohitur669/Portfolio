@@ -9,7 +9,7 @@
 - **LinkedIn:** `https://www.linkedin.com/in/mohitur02/`
 - **X / Twitter:** `https://x.com/mohitur02`
 - **Instagram:** `https://www.instagram.com/mohitur02/`
-- **Technical Blog:** `https://rahamanmohitur.blogspot.com/`
+- **Technical Blog:** `https://blogs.mohitur.com/`
 - **Resume PDF:** `https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf`
 
 ---

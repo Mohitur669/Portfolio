@@ -11,7 +11,7 @@
 
 A high-performance, type-safe developer portfolio showcasing distributed systems, cloud microservices, and mathematical data modeling.
 
-[**Explore Live Portfolio**](https://portfolio.mohitur.com) • [**Read Technical Blog**](https://rahamanmohitur.blogspot.com/) • [**Connect on LinkedIn**](https://linkedin.com/in/mohitur02)
+[**Explore Live Portfolio**](https://portfolio.mohitur.com) • [**Read Technical Blog**](https://blogs.mohitur.com/) • [**Connect on LinkedIn**](https://linkedin.com/in/mohitur02)
 
 </div>
 
@@ -156,7 +156,7 @@ The codebase includes automated tests validating:
 - **Email**: [mohitur669@gmail.com](mailto:mohitur669@gmail.com)
 - **LinkedIn**: [linkedin.com/in/mohitur02](https://linkedin.com/in/mohitur02)
 - **GitHub**: [github.com/Mohitur669](https://github.com/Mohitur669)
-- **Technical Blog**: [rahamanmohitur.blogspot.com](https://rahamanmohitur.blogspot.com/)
+- **Technical Blog**: [blogs.mohitur.com](https://blogs.mohitur.com/)
 
 ---
 

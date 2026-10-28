@@ -13,6 +13,7 @@ describe('Data Layer & Verification Integrity', () => {
     expect(OWNER_DATA.socials.linkedin).toBe('https://www.linkedin.com/in/mohitur02/');
     expect(OWNER_DATA.socials.twitter).toBe('https://x.com/mohitur02');
     expect(OWNER_DATA.socials.instagram).toBe('https://www.instagram.com/mohitur02/');
+    expect(OWNER_DATA.socials.blog).toBe('https://blogs.mohitur.com/');
     expect(OWNER_DATA.resumePath).toBe('https://cdn-public-document.mohitur.com/resume/Mohd_Mohitur_Rahaman_Resume.pdf');
   });
 
