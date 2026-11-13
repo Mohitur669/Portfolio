@@ -1,8 +1,9 @@
+
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!\\.config(?:/|$)|\\.git(?:/|$)|\\.env(?:$|/)|.*(?:credentials|application_default_credentials)\\.json$|.*\\.(?:pem|key|p12|pfx)$).*)",
       "destination": "/index.html"
     }
   ]
